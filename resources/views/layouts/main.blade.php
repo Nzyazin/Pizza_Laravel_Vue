@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -160,25 +160,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
-                            <i class="nav-icon fas fa-tools"></i>
-                            <p>Катаегории</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
-                            <i class="nav-icon fas fa-tags"></i>
-                            <p>Теги</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
-                            <i class="nav-icon fas fa-palette"></i>
-                            <p>Цвета</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
+                        <a href="{{ route('user.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>Пользователи</p>
                         </a>

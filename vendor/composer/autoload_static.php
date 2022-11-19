@@ -340,8 +340,8 @@ class ComposerStaticInit9ecd0a49572ee59cdba73edf40744010
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -507,7 +507,16 @@ class ComposerStaticInit9ecd0a49572ee59cdba73edf40744010
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\API\\Product\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/Product/IndexController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Main\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Main/IndexController.php',
+        'App\\Http\\Controllers\\User\\CreateController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/CreateController.php',
+        'App\\Http\\Controllers\\User\\DeleteController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/DeleteController.php',
+        'App\\Http\\Controllers\\User\\EditController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/EditController.php',
+        'App\\Http\\Controllers\\User\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/IndexController.php',
+        'App\\Http\\Controllers\\User\\ShowController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/ShowController.php',
+        'App\\Http\\Controllers\\User\\StoreController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/StoreController.php',
+        'App\\Http\\Controllers\\User\\UpdateController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/UpdateController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -518,6 +527,9 @@ class ComposerStaticInit9ecd0a49572ee59cdba73edf40744010
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\User\\StoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/User/StoreRequest.php',
+        'App\\Http\\Requests\\User\\UpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/User/UpdateRequest.php',
+        'App\\Models\\Pizza' => __DIR__ . '/../..' . '/app/Models/Pizza.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
