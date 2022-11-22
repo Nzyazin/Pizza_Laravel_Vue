@@ -28,6 +28,7 @@ class UpdateRequest extends FormRequest
             'description'=> 'nullable|string',
             'preview_image'=> 'nullable',
             'price'=> 'nullable|integer',
+            'old_price' => 'nullable|integer',
             'is_published'=> 'nullable|date',
         ];
     }

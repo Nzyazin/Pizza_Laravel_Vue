@@ -9,4 +9,9 @@ class Pizza extends Model
 {
     protected $table = 'pizzas';
     protected $guarded = false;
+
+    public function getImageUrlAttribute() {
+        return url('storage/' . $this->preview_image);
+    }
+
 }

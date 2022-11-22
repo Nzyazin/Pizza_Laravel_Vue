@@ -35,6 +35,9 @@
                         <input type="text" name="price" class="form-control" placeholder="Цена">
                     </div>
                     <div class="form-group">
+                        <input type="text" name="old_price" class="form-control" placeholder="Старая цена">
+                    </div>
+                    <div class="form-group">
                         <div class="input-group">
                             <div class="custom-file">
                                 <input name="preview_image" type="file" class="custom-file-input" id="exampleInputFile">
