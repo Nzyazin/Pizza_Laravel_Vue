@@ -26,16 +26,16 @@
                     @csrf
                     @method('patch')
                     <div class="form-group">
-                        <input type="text" name="title" class="form-control" placeholder="Наименование">
+                        <input type="text" name="title" class="form-control" value="{{ $pizzas->title }}" placeholder="Наименование">
                     </div>
                     <div class="form-group">
-                        <textarea name="description" class="form-control" cols="30" rows="10" placeholder="Описание"></textarea>
+                        <textarea name="description" class="form-control" cols="30" rows="10" id="myTextarea" placeholder="Описание"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="price" class="form-control" placeholder="Цена">
+                        <input type="text" name="price" class="form-control" value="{{ $pizzas->price }}" placeholder="Цена">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="old_price" class="form-control" placeholder="Старая цена">
+                        <input type="text" name="old_price" class="form-control" value="{{ $pizzas->old_price }}" placeholder="Старая цена">
                     </div>
                     <div class="form-group">
                         <div class="input-group">
@@ -57,4 +57,7 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+    <script>
+        document.getElementById("myTextarea").defaultValue = "{{ $pizzas->description }}";
+    </script>
 @endsection
