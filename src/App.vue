@@ -43,7 +43,7 @@
                 <div class="d-lg-block d-none">
                     <div class="row g-0 position-relative">
                         <div class="col-lg-3 d-flex align-items-center justify-content-center border-rit ">
-                            <div class="logo"> <a href="index.html"> <img src="src/assets/images/logo/logo.png" width="120" height="120" alt=""> </a>
+                            <div class="logo"> <a href="index.html"> <img src="src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
                             </div>
                         </div>
                         <div class="col-lg-9 g-0 p-0">
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> <a href="shop-grid.html" class="offer-link"> Offer </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
             </div>
             <div class="container position-relative d-lg-block d-none">
                 <div class="d-flex align-items-center justify-content-between"> <a href="index.html" class="logo me-2">
-                        <img src="src/assets/images/logo/logo.png" alt=""> </a>
+                        <img src="src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
                     <div class="mega-menu-default mega-menu d-lg-block d-none">
                         <div class="container ">
                             <div class="row">

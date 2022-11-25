@@ -114,13 +114,13 @@ jQuery(function ($) {
 
 
     /****======  banner-one__slider Slick  ======*******/
-  
-      $(".slick").slick({
+
+      $(".slick").not('.slick-initialized').slick({
         prevArrow: '<div class="slick-arrow arrow-back"> <i class="flaticon-left-arrow-2"></i> </div>',
         nextArrow: '<div class="slick-arrow arrow-next"> <i class="flaticon-right-arrow-2"></i> </div>'
       });
-    
-    
+
+
 
 
     /****======  banner-4 Slick  ======*******/
@@ -327,7 +327,7 @@ jQuery(function ($) {
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
-        autoplay: true, 
+        autoplay: true,
         prevArrow: '<button class="arrow-back"> <img src="assets/images/home-six/arroe-left.png" alt=""></button>',
         nextArrow: '<button class="arrow-next"> <img src="assets/images/home-six/arroe-right.png" alt=""></button>',
         autoplaySpeed: 2000,
@@ -337,7 +337,7 @@ jQuery(function ($) {
             settings: {
               slidesToShow: 2,
             }
-          } 
+          }
         ]
       });
     };
@@ -818,7 +818,7 @@ jQuery(function ($) {
 
 
 
-    //=== CountDownTimer===  
+    //=== CountDownTimer===
     if ($(".time-countdown-two").length) {
       $(".time-countdown-two").each(function () {
         var Self = $(this);
@@ -974,7 +974,7 @@ jQuery(function ($) {
       });
     };
 
-    //  Price Filter 
+    //  Price Filter
     if ($("#price-range").length) {
       $("#price-range").slider({
         range: true,
