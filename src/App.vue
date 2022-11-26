@@ -43,7 +43,7 @@
                 <div class="d-lg-block d-none">
                     <div class="row g-0 position-relative">
                         <div class="col-lg-3 d-flex align-items-center justify-content-center border-rit ">
-                            <div class="logo"> <a href="index.html"> <img src="src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
+                            <div class="logo"> <a href="/"> <img src="src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
                             </div>
                         </div>
                         <div class="col-lg-9 g-0 p-0">
@@ -70,12 +70,12 @@
                                             </nav>
 
 
-                                            <div class="right d-flex align-items-center justify-content-end">
+                                            <div class="right d-flex align-items-center justify-content-end" >
                                                 <ul class="main-menu__widge-box d-flex align-items-center ">
 
-                                                    <li class="cartm"> <a href="#0" class="number cart-icon"> <i
-                                                                class="flaticon-shopping-cart"></i><span
-                                                                class="count">(5)</span> </a> </li>
+                                                    <li class="cartm"> <a href="#0" class="number cart-icon" > <i
+                                                                class="flaticon-shopping-cart" ></i><span
+                                                                class="count" >(5)</span> </a> </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div class="container position-relative d-lg-block d-none">
-                <div class="d-flex align-items-center justify-content-between"> <a href="index.html" class="logo me-2">
+                <div class="d-flex align-items-center justify-content-between"> <a href="/" class="logo me-2">
                         <img src="src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
                     <div class="mega-menu-default mega-menu d-lg-block d-none">
                         <div class="container ">
@@ -269,8 +269,6 @@
                     <div class="footer-payment wow fadeInUp animated">
                         <a href="#0"> <img src="src/assets/images/home-four/method-1.jpg" alt="payment"> </a>
                         <a href="#0"> <img src="src/assets/images/home-four/method-2.jpg" alt="payment"> </a>
-                        <a href="#0"> <img src="src/assets/images/home-four/method-3.jpg" alt="payment"> </a>
-                        <a href="#0"> <img src="src/assets/images/home-four/method-4.jpg" alt="payment"> </a>
                     </div>
                 </div>
             </div>
