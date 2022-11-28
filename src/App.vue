@@ -30,6 +30,7 @@
                           <ul class="page-dropdown-menu">
                             <li class="dropdown-list"> <router-link to="/"> <span>Главная </span> </router-link></li>
                             <li class="dropdown-list"> <router-link to="/pizza"> <span>Заказать </span> </router-link></li>
+                              <li class="dropdown-list"> <router-link to="/cart"> <span>Корзина </span> </router-link></li>
                           </ul>
                         </div>
                     </div>
@@ -60,6 +61,7 @@
                                                 class="page-dropdown-menu d-flex align-items-center justify-content-center">
                                                   <li class="dropdown-list"> <router-link to="/"> <span>Главная</span> </router-link></li>
                                                   <li class="dropdown-list"> <router-link to="/pizza"> <span>Заказать </span> </router-link></li>
+                                                    <li class="dropdown-list"> <router-link to="/cart"> <span>Корзина </span> </router-link></li>
                                                 </ul>
                                             </nav>
 
@@ -114,6 +116,7 @@
                                       class="page-dropdown-menu d-flex align-items-center justify-content-center">
                                     <li class="dropdown-list"> <router-link to="/"> <span>Главная</span> </router-link></li>
                                     <li class="dropdown-list"> <router-link to="/pizza"> <span>Заказать </span> </router-link></li>
+                                      <li class="dropdown-list"> <router-link to="/cart"> <span>Корзина </span> </router-link></li>
                                   </ul>
                               </nav>
 
@@ -127,7 +130,7 @@
         <div class="side-cart d-flex flex-column justify-content-between">
             <div class="top">
                 <div class="content d-flex justify-content-between align-items-center">
-                    <h6 class="text-uppercase">Your Cart (03)</h6> <span class="cart-close text-uppercase">X</span>
+                    <h6 class="text-uppercase">Корзина (03)</h6> <span class="cart-close text-uppercase">X</span>
                 </div>
                 <div class="cart_items">
                     <div class="items d-flex justify-content-between align-items-center">
@@ -190,70 +193,14 @@
             </div>
             <div class="bottom">
                 <div class="total-ammount d-flex justify-content-between align-items-center">
-                    <h6 class="text-uppercase">Total:</h6>
+                    <h6 class="text-uppercase">Итого:</h6>
                     <h6 class="ammount text-uppercase">$850.00</h6>
                 </div>
-                <div class="button-box d-flex justify-content-between"> <a href="cart.html" class="btn_black"> View Cart
-                </a> <a href="cart.html" class="button-2 btn_theme"> Chekout </a> </div>
+                <div class="button-box d-flex justify-content-between"> <router-link to="/cart" class="btn_black"> В корзину
+                </router-link>  </div>
             </div>
         </div>
-        <div class="sidebar-content-closer"></div>
-        <div class="sidebar-content">
-            <div class="sidebar-widget-container">
-                <div class="widget-heading d-flex justify-content-end align-content-center"> <span
-                        class="close-side-widget">X</span> </div>
-                <div class="sidebar-textwidget">
-                    <div class="sidebar-info-contents">
-                        <div class="content-inner">
-                            <div class="logo"> <a href="index.html"><img src="src/assets/images/logo/logo-2.png" alt=""></a>
-                            </div>
-                            <div class="content-box">
-                                <h4>About Us</h4>
-                                <div class="inner-text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                                </div>
-                            </div>
-                            <div class="form_inner">
-                                <h4>Support</h4>
-                                <form action="index.html" method="post">
-                                    <div class="form-group mt-4"> <input type="text" name="name" placeholder="Name"
-                                            required=""> </div>
-                                    <div class="form-group mt-4"> <input type="email" name="email" placeholder="Email"
-                                            required=""> </div>
-                                    <div class="form-group mt-4"> <textarea name="message"
-                                            placeholder="Message..."></textarea> </div>
-                                    <div class="form-group message-btn mt-4"> <button type="submit"
-                                            class="btn--secondary"> <span class="txt">Submit Now</span> </button> </div>
-                                </form>
-                            </div>
-                            <div class="sidebar-contact-info">
-                                <h4>Contact Info</h4>
-                                <ul>
-                                    <li> <span class="flaticon-pin-1"></span> New York, United States </li>
-                                    <li> <span class="flaticon-telephone"></span> <a href="tel:+44203700001">+44 123 456
-                                            789</a> </li>
-                                    <li> <span class="flaticon-mail"></span> <a
-                                            href="mailto:info@example.com">info@example.com</a> </li>
-                                </ul>
-                            </div>
-                            <div class="thm-medio-boxx1">
-                                <ul class="social-box">
-                                    <li class="facebook"> <a href="https://www.facebook.com/" target="_blank"><i
-                                                class="flaticon-facebook-app-symbol"></i></a> </li>
-                                    <li class="twitter"> <a href="https://twitter.com/" target="_blank"><i
-                                                class="flaticon-twitter"></i></a> </li>
-                                    <li class="instagram"> <a href="https://www.instagram.com/" target="_blank"><i
-                                                class="flaticon-instagram"></i></a> </li>
-                                    <li class="youtube"> <a href="https://www.youtube.com/" target="_blank"><i
-                                                class="flaticon-youtube"></i></a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
     </header>
 

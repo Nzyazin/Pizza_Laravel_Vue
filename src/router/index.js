@@ -13,6 +13,11 @@ const router = createRouter({
       name: "pizza",
       component: () => import('../views/pizza/Index.vue')
     },
+      {
+          path: "/cart",
+          name: "cart.index",
+          component: () => import('../views/cart/Index.vue')
+      },
   ]
 })
 
