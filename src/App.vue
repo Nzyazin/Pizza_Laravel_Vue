@@ -71,7 +71,7 @@
 
                                                     <li class="cartm"> <a href="#0" class="number cart-icon" > <i
                                                                 class="flaticon-shopping-cart" ></i><span
-                                                                class="count" >(5)</span> </a> </li>
+                                                                class="count" >{{ cartTotalQty }}</span> </a> </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -130,63 +130,21 @@
         <div class="side-cart d-flex flex-column justify-content-between">
             <div class="top">
                 <div class="content d-flex justify-content-between align-items-center">
-                    <h6 class="text-uppercase">Корзина (03)</h6> <span class="cart-close text-uppercase">X</span>
+                    <h6 class="text-uppercase">Корзина {{ cartTotalQty }}</h6> <span class="cart-close text-uppercase">X</span>
                 </div>
                 <div class="cart_items">
-                    <div class="items d-flex justify-content-between align-items-center">
+                    <div v-for="product in products" class="items d-flex justify-content-between align-items-center">
                         <div class="left d-flex align-items-center"> <a href="shop-details-1.html"
-                                                                        class="thumb d-flex justify-content-between align-items-center"> <img
-                            src="assets/images/shop/products-img1.jpg" alt=""> </a>
+                                                                        class="thumb d-flex justify-content-between align-items-center"> <img :src="product.image_url"
+                             :alt="product.title"> </a>
                             <div class="text"> <a href="shop-details-1.html">
-                                <h6>Diamond Bracelet</h6>
+                                <h6>{{  product.title }}</h6>
                             </a>
-                                <p>2 X <span>$350.00</span> </p>
+                                <p>{{ product.qty }} X <span>Р {{ product.price }}</span> </p>
                             </div>
                         </div>
                         <div class="right">
-                            <div class="item-remove"> <i class="flaticon-cross"></i> </div>
-                        </div>
-                    </div>
-                    <div class="items d-flex justify-content-between align-items-center">
-                        <div class="left d-flex align-items-center"> <a href="shop-details-1.html"
-                                                                        class="thumb d-flex justify-content-between align-items-center"> <img
-                            src="assets/images/shop/products-img2.jpg" alt=""> </a>
-                            <div class="text"> <a href="shop-details-1.html">
-                                <h6>Blacked Neckles </h6>
-                            </a>
-                                <p>1 X <span>$150.00</span> </p>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="item-remove"> <i class="flaticon-cross"></i> </div>
-                        </div>
-                    </div>
-                    <div class="items d-flex justify-content-between align-items-center">
-                        <div class="left d-flex align-items-center"> <a href="shop-details-1.html"
-                                                                        class="thumb d-flex justify-content-between align-items-center"> <img
-                            src="assets/images/shop/products-img3.jpg" alt=""> </a>
-                            <div class="text"> <a href="shop-details-1.html">
-                                <h6>Diamond Ring </h6>
-                            </a>
-                                <p>1 X <span>$200.00</span> </p>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="item-remove"> <i class="flaticon-cross"></i> </div>
-                        </div>
-                    </div>
-                    <div class="items d-flex justify-content-between align-items-center">
-                        <div class="left d-flex align-items-center"> <a href="shop-details-2.html"
-                                                                        class="thumb d-flex justify-content-between align-items-center"> <img
-                            src="assets/images/shop/products-img4.jpg" alt=""> </a>
-                            <div class="text"> <a href="shop-details-1.html">
-                                <h6>Women Earring</h6>
-                            </a>
-                                <p>1 X <span>$150.00</span> </p>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="item-remove"> <i class="flaticon-cross"></i> </div>
+                            <div @click.prevent="removeProduct(product.id)" class="item-remove"> <i class="flaticon-cross"></i> </div>
                         </div>
                     </div>
                 </div>
@@ -194,7 +152,7 @@
             <div class="bottom">
                 <div class="total-ammount d-flex justify-content-between align-items-center">
                     <h6 class="text-uppercase">Итого:</h6>
-                    <h6 class="ammount text-uppercase">$850.00</h6>
+                    <h6 class="ammount text-uppercase">Р {{ cartTotalCost}}</h6>
                 </div>
                 <div class="button-box d-flex justify-content-between"> <router-link to="/cart" class="btn_black"> В корзину
                 </router-link>  </div>
@@ -293,10 +251,88 @@
 </template>
 <script>
 export default {
-  name: 'App',
-  mounted() {
-    $(document).trigger('change')
-  }
+    name: 'App',
+    mounted() {
+        $(document).trigger('change')
+        this.getCartProducts()
+    },
+    data() {
+        return {
+            products: []
+        }
+    },
+    computed: {
+        cartTotalCost() {
+            let i = 0;
+            for (let index = 0; index < this.products.length; index++) {
+                i += this.products[index].price * this.products[index].qty;
+            }
+            return i;
+        },
+        cartTotalQty() {
+            let i = 0;
+            for (let index = 0; index < this.products.length; index++) {
+                i += this.products[index].qty;
+            }
+            return i;
+        }
+    },
+    methods: {
+        getCartProducts() {
+            this.products = JSON.parse(localStorage.getItem('cart'))
+            console.log(this.products);
+        },
+
+        minusQty(product) {
+            if (product.qty === 0) return
+            product.qty--
+            this.updateCart()
+        },
+
+        plusQty(product) {
+            product.qty++
+            this.updateCart()
+        },
+
+        removeProduct(id) {
+            this.products = this.products.filter(product => {
+                return product.id !== id
+            })
+            this.updateCart()
+        },
+
+        updateCart() {
+            localStorage.setItem('cart', JSON.stringify(this.products))
+        },
+        
+        addToCart(id, isSingle) {
+
+            let qty = isSingle ? 1 : $('.qtyValue').val()
+
+            let cart = localStorage.getItem('cart')
+            $('.qtyValue').val(1)
+            let newProduct = [
+                {
+                    'id': id,
+                    'qty': qty,
+                }
+            ]
+            if(!cart) {
+                localStorage.setItem('cart', JSON.stringify(newProduct))
+            } else {
+                cart = JSON.parse(cart)
+                cart.forEach(productInCart => {
+                    if (productInCart.id === id) {
+                        productInCart.qty = Number(productInCart.qty) + Number(qty)
+                        newProduct = null
+                    }
+
+                })
+                Array.prototype.push.apply(cart, newProduct)
+                localStorage.setItem('cart', JSON.stringify(cart))
+            }
+        },
+    }
 }
 
 </script>
