@@ -14,9 +14,7 @@ jQuery(function ($) {
         header.addClass("animated fadeInDown fixed");
       }
     });
-
-
-    /****======  newsLetter_popup ======*******/
+      /****======  newsLetter_popup ======*******/
     let selector = $(".modal-btn");
     selector.magnificPopup({
       type: "inline",

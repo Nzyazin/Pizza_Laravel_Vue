@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\Product\IndexController;
+use App\Http\Controllers\API\Order\StoreController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use League\CommonMark\Extension\CommonMark\Node\Block\IndentedCode;
@@ -21,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/pizza', IndexController::class);
+Route::post('/cart', StoreController::class);

@@ -67,7 +67,7 @@
                     <input style="margin: 12px 12px;" type="text" v-model="date_of_birth" placeholder="Дата рождения">
                     <input style="margin: 12px 12px;" type="text" v-model="mob_number" placeholder="Сотовый телефон">
                     <input style="margin: 12px 12px;" type="text" v-model="address" placeholder="Адрес">
-                    <button class="btn--primary mt-30" style="margin: 12px 12px;" type="submit">Отправить </button>
+                    <button @click.prevent="storeOrder" class="btn--primary mt-30" style="margin: 12px 12px;" type="submit">Отправить </button>
                 </div>
             </div>
         </section>
@@ -93,10 +93,30 @@ export default {
     },
     data() {
         return {
-            products: []
+            products: [],
+            name: '',
+            date_of_birth: '',
+            mob_number: '',
+            address: '',
         }
     },
     methods: {
+        storeOrder() {
+            this.axios.post('http://127.0.0.1:8000/api/cart', {
+                'products': this.products,
+                'name': this.name,
+                'mob_number': this.mob_number,
+                'date_of_birth': this.date_of_birth,
+                'address': this.address,
+                'total_price': this.cartTotalCost,
+            })
+                .then( res => {
+                    console.log(res);
+                })
+                .finally(v => {
+                    $(document).trigger('change')
+                })
+        },
         getCartProducts() {
             this.products = JSON.parse(localStorage.getItem('cart'))
             console.log(this.products);

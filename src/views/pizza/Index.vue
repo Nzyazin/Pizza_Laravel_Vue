@@ -13,7 +13,7 @@
                                         :src="product.image_url" alt="" class="hover-img" />
                                     </a>
                                         <div class="products-grid-one__badge-box"> <span class="bg_base badge new ">Новая</span>
-                                        </div> <a @click.prevent="addToCart(product, true)" href="cart.html" class="addcart btn--primary style2"> Добавить </a>
+                                        </div> <a @click.prevent="addToCart(product, true);" @click="sendToParent" href="cart.html" class="addcart btn--primary style2"> Добавить </a>
                                         <div class="products-grid__usefull-links">
                                             <ul>
                                                 <li><a :href="`#popup${product.id}`" class="popup_link"> <i class="flaticon-visibility"></i>
@@ -54,7 +54,7 @@
                                                                     </span> <input type="number" class="qtyValue" value="1" />
                                                                     <span class="increaseQty"> <i class="flaticon-plus"></i>
                                                                     </span> </div>
-                                                                <button @click.prevent="addToCart(product )" class="btn--primary "> Добавить </button>
+                                                                <button @click.prevent="addToCart(product )" class="btn--primary" @click="sendToParent"> Добавить </button>
                                                             </div>
                                                         </div>
                                                         <div class="payment-method">
@@ -96,6 +96,9 @@ export default {
       }
     },
   methods: {
+      sendToParent() {
+        this.$emit('sendToParent', this.products)
+      },
       addToCart(product, isSingle) {
 
           let qty = isSingle ? 1 : $('.qtyValue').val()

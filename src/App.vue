@@ -69,7 +69,7 @@
                                             <div class="right d-flex align-items-center justify-content-end" >
                                                 <ul class="main-menu__widge-box d-flex align-items-center ">
 
-                                                    <li class="cartm"> <a href="#0" class="number cart-icon" > <i
+                                                    <li class="cartm"> <a href="#" class="number cart-icon" > <i
                                                                 class="flaticon-shopping-cart" ></i><span
                                                                 class="count" >{{ cartTotalQty }}</span> </a> </li>
                                                 </ul>
@@ -96,7 +96,7 @@
                                 <div class="menubar"> <span></span> <span></span> <span></span> </div> <a
                                     href="/" class="logo"> <img src="src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
                                 <div class="cart-holder">
-                                    <a href="#0" class="cart cart-icon position-relative">
+                                    <a href="#" class="cart cart-icon position-relative">
                                         <i class="flaticon-shopping-cart"></i>
                                     </a>
                                 </div>
@@ -162,7 +162,7 @@
 
     </header>
 
-    <router-view></router-view>
+    <router-view @sendToParent="showQty"></router-view>
 
 
     <!--  Footer Three start -->
@@ -250,6 +250,9 @@
   </div>
 </template>
 <script>
+
+
+
 export default {
     name: 'App',
     mounted() {
@@ -262,6 +265,9 @@ export default {
         }
     },
     computed: {
+        showQty(data) {
+            console.log(data)
+        },
         cartTotalCost() {
             let i = 0;
             for (let index = 0; index < this.products.length; index++) {
@@ -304,7 +310,7 @@ export default {
         updateCart() {
             localStorage.setItem('cart', JSON.stringify(this.products))
         },
-        
+
         addToCart(id, isSingle) {
 
             let qty = isSingle ? 1 : $('.qtyValue').val()
