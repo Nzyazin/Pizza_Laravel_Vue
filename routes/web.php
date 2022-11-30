@@ -34,3 +34,13 @@ Route::group(['prefix' => 'pizzas'], function() {
     Route::patch('/{pizzas}', \App\Http\Controllers\Pizza\UpdateController::class)->name('pizza.update');
     Route::delete('/{pizzas}', \App\Http\Controllers\Pizza\DeleteController::class)->name('pizza.delete');
 });
+
+Route::group(['prefix' => 'orders'], function() {
+    Route::get('/', \App\Http\Controllers\Order\IndexController::class)->name('order.index');
+    Route::get('/create', \App\Http\Controllers\Order\CreateController::class)->name('order.create');
+    Route::post('/', \App\Http\Controllers\Order\StoreController::class)->name('order.store');
+    Route::get('/{orders}/edit', \App\Http\Controllers\Order\EditController::class)->name('order.edit');
+    Route::get('/{orders}', \App\Http\Controllers\Order\ShowController::class)->name('order.show');
+    Route::patch('/{orders}', \App\Http\Controllers\Order\UpdateController::class)->name('order.update');
+    Route::delete('/{orders}', \App\Http\Controllers\Order\DeleteController::class)->name('order.delete');
+});

@@ -148,7 +148,7 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
+                        <a href="{{ route('order.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>Заказы</p>
                         </a>
