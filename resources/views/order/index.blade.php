@@ -9,7 +9,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item">Главная</li>
+                        <li class="breadcrumb-item">Заказы</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -33,15 +33,21 @@
                                 <table class="table table-hover text-nowrap">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>ID заказа</th>
+                                        <th>ID пользователя</th>
                                         <th>Цена</th>
+                                        <th>Статус оплаты</th>
+                                        <th>Продукты</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($orders as $order)
                                         <tr>
                                             <td>{{ $order->id }}</td>
-                                            <td><a href="{{ route('order.show', $order->id) }}">{{ $order->total_price }}</a></td>
+                                            <td><a href="{{ route('user.show', $order->user_id) }}">{{ $order->user_id }}</td>
+                                            <td>{{ $order->total_price }}</a></td>
+                                            <td>{{ $order->payment_status }}</a></td>
+                                            <td>{{ $order->products }}</a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

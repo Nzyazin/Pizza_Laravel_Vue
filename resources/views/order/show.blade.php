@@ -9,7 +9,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item">Главная</li>
+                        <li class="breadcrumb-item">Заказы</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->

@@ -64,7 +64,7 @@
                 </div>
                 <div style="display: block;" class="row w-25">
                     <input style="margin: 12px 12px;" type="text" v-model="name" placeholder="Имя">
-                    <input style="margin: 12px 12px;" type="text" v-model="date_of_birth" placeholder="Дата рождения">
+                    <input style="margin: 12px 12px;" type="text" v-model="date_of_birth" placeholder="YYYY-MM-DD">
                     <input style="margin: 12px 12px;" type="text" v-model="mob_number" placeholder="Сотовый телефон">
                     <input style="margin: 12px 12px;" type="text" v-model="address" placeholder="Адрес">
                     <button @click.prevent="storeOrder" class="btn--primary mt-30" style="margin: 12px 12px;" type="submit">Отправить </button>
@@ -105,8 +105,8 @@ export default {
             this.axios.post('http://127.0.0.1:8000/api/cart', {
                 'products': this.products,
                 'name': this.name,
-                'mob_number': this.mob_number,
                 'date_of_birth': this.date_of_birth,
+                'mob_number': this.mob_number,
                 'address': this.address,
                 'total_price': this.cartTotalCost,
             })
