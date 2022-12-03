@@ -41,14 +41,18 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($orders as $order)
+                                    @foreach($array as $key)
                                         <tr>
                                             <td>{{ $order->id }}</td>
                                             <td><a href="{{ route('user.show', $order->user_id) }}">{{ $order->user_id }}</td>
                                             <td>{{ $order->total_price }}</a></td>
                                             <td>{{ $order->payment_status }}</a></td>
+
                                             <td>{{ $order->products }}</a></td>
                                         </tr>
+                                    @endforeach
+                                    @foreach ($array as $object)
+                                        {{ array_shift($object) }}
                                     @endforeach
                                     </tbody>
                                 </table>

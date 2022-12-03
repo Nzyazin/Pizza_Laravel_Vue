@@ -12,11 +12,20 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $users = User::all();
-        $orders = Order::all()->whereJsonContains('options->languages', 'en')
-            ->get();
-        dd($orders);
+        $array[] = [];
+        $ordersCount = Order::count();
+        for ($i = 1; $i < $ordersCount +1; $i++) {
+            $orders = Order::find($i);
+            $products = $orders->products;
+            $orders->products = $products;
+            $orders->toArray();
+            array_push($array, $orders->toArray());
+        }
+        /*foreach($yourArrayName as $object)
+        {
+            $arrays[] = $object->toArray();
+        }*/
 
-        return view('order.index', compact('orders', 'users'));
+        return view('order.index', compact('array'));
     }
 }
