@@ -25,9 +25,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <a href="{{ route('order.create') }}" class="btn btn-primary">Добавить</a>
-                            </div>
+
 
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
@@ -38,21 +36,19 @@
                                         <th>Цена</th>
                                         <th>Статус оплаты</th>
                                         <th>Продукты</th>
+                                        <th>Общая стоимость</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($array as $key)
+                                    @foreach($orders as $order)
                                         <tr>
                                             <td>{{ $order->id }}</td>
                                             <td><a href="{{ route('user.show', $order->user_id) }}">{{ $order->user_id }}</td>
                                             <td>{{ $order->total_price }}</a></td>
                                             <td>{{ $order->payment_status }}</a></td>
-
-                                            <td>{{ $order->products }}</a></td>
+                                            <td>@for($i = 0; $i < count($order->products); $i++){{ substr(print_r($order->products[$i]['title']), 0, -1) }} : шт. {{ substr(print_r($order->products[$i]['qty']), 0, -1) }};<br> @endfor</a></td>
+                                            <td>{{ $order->total_price }} Р</a></td>
                                         </tr>
-                                    @endforeach
-                                    @foreach ($array as $object)
-                                        {{ array_shift($object) }}
                                     @endforeach
                                     </tbody>
                                 </table>

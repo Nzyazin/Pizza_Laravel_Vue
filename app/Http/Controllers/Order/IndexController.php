@@ -13,19 +13,16 @@ class IndexController extends Controller
     public function __invoke()
     {
         $array[] = [];
+        $orders = Order::all();
         $ordersCount = Order::count();
         for ($i = 1; $i < $ordersCount +1; $i++) {
-            $orders = Order::find($i);
-            $products = $orders->products;
-            $orders->products = $products;
-            $orders->toArray();
-            array_push($array, $orders->toArray());
+            $ordersC = Order::find($i);
+            $products = $ordersC->products;
+            $ordersC->products = $products;
+            $ordersC->toArray();
+            array_push($array, $ordersC->toArray());
         }
-        /*foreach($yourArrayName as $object)
-        {
-            $arrays[] = $object->toArray();
-        }*/
 
-        return view('order.index', compact('array'));
+        return view('order.index', compact('array','orders'));
     }
 }
