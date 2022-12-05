@@ -45,7 +45,7 @@
                                             <td>{{ $order->id }}</td>
                                             <td><a href="{{ route('user.show', $order->user_id) }}">{{ $order->user_id }}</td>
                                             <td>{{ $order->payment_status }}</a></td>
-                                            <td>@for($i = 0; $i < count($order->products); $i++)<a href="{{ route('pizza.show', $order->products[$i]['id']) }}">{{ substr(print_r($order->products[$i]['title']), 0, -1) }} : шт. {{ substr(print_r($order->products[$i]['qty']), 0, -1) }};<br> @endfor</a></td>
+                                            <td>@for($i = 0; $i < count($order->products); $i++)<a href="{{ route('pizza.show', $order->products[$i]['id']) }}">{{ substr(print_r($order->products[$i]['title']), 0, -1) }}</a> : шт. {{ substr(print_r($order->products[$i]['qty']), 0, -1) }};<br> @endfor</a></td>
                                             <td>{{ $order->total_price }} Р</a></td>
                                         </tr>
                                     @endforeach
