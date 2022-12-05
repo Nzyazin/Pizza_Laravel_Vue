@@ -5736,8 +5736,6 @@ products-grid start
     }
 
     .row>* {
-        width: 30%;
-        max-width: 90%;
     }
 }
 @media (min-width: 992px) {

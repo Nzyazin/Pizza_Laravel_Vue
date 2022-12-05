@@ -23,7 +23,7 @@ class StoreController extends Controller
         ]);
 
         $order = Order::create([
-            'products' => $data['products'],
+            'products' => json_encode($data['products']),
             'user_id' => $user->id,
             'total_price' => $data['total_price'],
         ]);
