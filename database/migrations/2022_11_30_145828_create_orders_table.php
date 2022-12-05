@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->index()->constrained('users');
-            $table->jsonb('products');
+            $table->json('products');
             $table->integer('total_price');
             $table->unsignedSmallInteger('payment_status')->default(1);
             $table->timestamps();
