@@ -62,13 +62,13 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: block;" class="row w-25">
+                <form style="display: block;" class="row w-25">
                     <input style="margin: 12px 12px;" type="text" v-model="name" placeholder="Имя">
                     <input style="margin: 12px 12px;" type="text" v-model="date_of_birth" placeholder="YYYY-MM-DD">
                     <input style="margin: 12px 12px;" type="text" v-model="mob_number" placeholder="Сотовый телефон">
                     <input style="margin: 12px 12px;" type="text" v-model="address" placeholder="Адрес">
-                    <button @click.prevent="storeOrder" class="btn--primary mt-30" style="margin: 12px 12px;" type="submit">Отправить </button>
-                </div>
+                    <button @click.prevent="storeOrder" @click="resetInput" class="btn--primary mt-30" style="margin: 12px 12px;" type="submit">Отправить </button>
+                </form>
             </div>
         </section>
         <!--End cart area-->
@@ -101,6 +101,12 @@ export default {
         }
     },
     methods: {
+        resetInput() {
+            this.name = "";
+            this.date_of_birth = "";
+            this.mob_number = "";
+            this.address = "";
+        },
         storeOrder() {
             this.axios.post('http://127.0.0.1:8000/api/cart', {
                 'products': this.products,
@@ -110,16 +116,14 @@ export default {
                 'address': this.address,
                 'total_price': this.cartTotalCost,
             })
-                .then( res => {
-                    console.log(res);
-                })
                 .finally(v => {
                     $(document).trigger('change')
                 })
+
+            alert('Отправлено!')
         },
         getCartProducts() {
             this.products = JSON.parse(localStorage.getItem('cart'))
-            console.log(this.products);
         },
 
         minusQty(product) {
