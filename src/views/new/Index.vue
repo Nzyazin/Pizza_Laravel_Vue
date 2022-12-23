@@ -1,6 +1,5 @@
 <template>
-    <header>
-    </header>
+    <Header/>
     <h1>Products</h1>
     <div class="container">
         <div class="products">
@@ -16,8 +15,10 @@
 </template>
 
 <script>
+import Header from "../layouts/Header.vue";
 export default {
     name: "new",
+    components: {Header},
     mounted() {
         this.$store.dispatch('main/getProducts')
     },

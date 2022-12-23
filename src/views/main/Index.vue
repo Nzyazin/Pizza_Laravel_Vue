@@ -1,8 +1,6 @@
 <template>
-    <div class="v-main"></div>
+    <Header/>
     <main class="overflow-hidden">
-
-
         <!-- Start Main Slider -->
         <section class="banner-style-3 overflow-hidden">
             <!-- Banner Carousel -->
@@ -42,8 +40,10 @@
 </template>
 
 <script>
+    import Header from "../layouts/Header.vue";
     export default {
         name: "Index",
+        components: {Header},
         mounted() {
             $(document).trigger('change')
         }

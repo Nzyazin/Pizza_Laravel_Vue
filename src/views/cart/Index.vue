@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Header/>
         <!--Start cart area-->
         <section class="cart-area pt-120 pb-120">
             <div class="container">
@@ -76,8 +77,10 @@
 </template>
 
 <script>
+import Header from "../layouts/Header.vue";
 export default {
     name: "cart",
+    components: {Header},
     computed: {
         cartTotalCost() {
             let i = 0;
