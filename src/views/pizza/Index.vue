@@ -16,7 +16,7 @@
                                         </div> <a @click.prevent="addToCart(product, true);" @click="sendToParent" href="cart.html" class="addcart btn--primary style2"> Добавить </a>
                                         <div class="products-grid__usefull-links">
                                             <ul>
-                                                <li><a :href="`#popup${product.id}`" class="popup_link"> <i class="flaticon-visibility"></i>
+                                                <li><a :href="`#popup${product.id}`"> <i class="flaticon-visibility"></i>
                                                     <span> Просмотр</span>
                                                 </a> </li>
                                             </ul>
@@ -86,6 +86,9 @@
 <script>
 export default {
   name: "Pizza",
+  props: ["product"],
+  components: {
+  },
   mounted() {
     $(document).trigger('change')
     this.getPizza()
@@ -96,10 +99,10 @@ export default {
       }
     },
   methods: {
-      sendToParent() {
-        this.$emit('sendToParent', this.products)
-      },
-      addToCart(product, isSingle) {
+  sendToParent() {
+    this.$emit('sendToParent', this.products)
+  },
+  addToCart(product, isSingle) {
 
           let qty = isSingle ? 1 : $('.qtyValue').val()
 
@@ -123,7 +126,6 @@ export default {
                       productInCart.qty = Number(productInCart.qty) + Number(qty)
                       newProduct = null
                   }
-
               })
               Array.prototype.push.apply(cart, newProduct)
               localStorage.setItem('cart', JSON.stringify(cart))

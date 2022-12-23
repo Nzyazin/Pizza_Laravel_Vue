@@ -11,6 +11,14 @@ class IndexController extends Controller
     public function __invoke()
     {
         $pizzas = Pizza::all();
+        //dd($pizzas);
+        /*$data = $pizzas->toArray();
+        $ordersCount = Order::count();
+        for ($i = 0; $i < $ordersCount; $i++) {
+            $ordersC = $orders[$i];
+            $products = $ordersC->products;
+            $ordersC->products = json_decode($products);
+        }*/
         return PizzaResource::collection($pizzas);
     }
 }

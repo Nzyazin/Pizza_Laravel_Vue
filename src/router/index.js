@@ -6,18 +6,28 @@ const router = createRouter({
     {
       path: "/",
       name: "main",
-      component: () => import('../views/main/Index.vue')
+      component: () => import('../views/main/Index.vue'),
+      props: true
     },
     {
       path: "/pizza",
       name: "pizza",
-      component: () => import('../views/pizza/Index.vue')
+      component: () => import('../views/pizza/Index.vue'),
+      props: true
     },
-      {
-          path: "/cart",
-          name: "cart.index",
-          component: () => import('../views/cart/Index.vue')
-      },
+    {
+      path: "/cart",
+      name: "cart",
+      component: () => import('../views/cart/Index.vue'),
+      props: true
+    },
+    {
+      path: "/new",
+      name: "new",
+      component: () => import('../views/new/Index.vue'),
+      props: true
+    },
+
   ]
 })
 

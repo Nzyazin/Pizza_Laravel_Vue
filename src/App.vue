@@ -26,11 +26,11 @@
                         <div class="mobile-menu__sidebar-menu">
                             <div class="menu-closer two"> <span> Закрыть меню </span> <span class="cross"><i
                                         class="flaticon-cross"></i></span> </div>
-
                           <ul class="page-dropdown-menu">
-                            <li class="dropdown-list"> <router-link to="/"> <span>Главная </span> </router-link></li>
-                            <li class="dropdown-list"> <router-link to="/pizza"> <span>Заказать </span> </router-link></li>
-                              <li class="dropdown-list"> <router-link to="/cart"> <span>Корзина </span> </router-link></li>
+                            <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная </span> </router-link></li>
+                            <li class="dropdown-list"> <router-link :to="{name: 'pizza'}"> <span>Заказать </span> </router-link></li>
+                            <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
+                            <li class="dropdown-list"> <router-link :to="{name: 'new'}"> <span>New </span> </router-link></li>
                           </ul>
                         </div>
                     </div>
@@ -47,7 +47,6 @@
                                     <div class="some-info">
                                         <p class="d-flex align-items-center"> <span class="icon"> <i
                                                     class="flaticon-power"></i> </span> Добро пожаловать в магазин</p>
-
                                     </div>
                                 </div>
                             </div>
@@ -59,19 +58,17 @@
                                             <nav>
                                                 <ul
                                                 class="page-dropdown-menu d-flex align-items-center justify-content-center">
-                                                  <li class="dropdown-list"> <router-link to="/"> <span>Главная</span> </router-link></li>
-                                                  <li class="dropdown-list"> <router-link to="/pizza"> <span>Заказать </span> </router-link></li>
-                                                    <li class="dropdown-list"> <router-link to="/cart"> <span>Корзина </span> </router-link></li>
+                                                  <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная</span> </router-link></li>
+                                                  <li class="dropdown-list"> <router-link :to="{name: 'pizza'}"> <span>Заказать </span> </router-link></li>
+                                                    <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
+                                                    <li class="dropdown-list"> <router-link :to="{name: 'new'}"> <span>New </span> </router-link></li>
                                                 </ul>
                                             </nav>
-
-
                                             <div class="right d-flex align-items-center justify-content-end" >
                                                 <ul class="main-menu__widge-box d-flex align-items-center ">
-
                                                     <li class="cartm"> <a href="#" class="number cart-icon" > <i
-                                                                class="flaticon-shopping-cart" ></i><span
-                                                                class="count" >{{ cartTotalQty }}</span> </a> </li>
+                                                        class="flaticon-shopping-cart" ></i><span
+                                                        class="count" >{{ $store.state.main.products.length }}</span> </a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -83,10 +80,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
         <div class="sticy-header">
             <div class="mobile-menu d-lg-none d-block">
                 <div class="mobile-menu__menu-top border-bottom-0">
@@ -114,9 +107,10 @@
                               <nav>
                                   <ul
                                       class="page-dropdown-menu d-flex align-items-center justify-content-center">
-                                    <li class="dropdown-list"> <router-link to="/"> <span>Главная</span> </router-link></li>
-                                    <li class="dropdown-list"> <router-link to="/pizza"> <span>Заказать </span> </router-link></li>
-                                      <li class="dropdown-list"> <router-link to="/cart"> <span>Корзина </span> </router-link></li>
+                                    <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная</span> </router-link></li>
+                                    <li class="dropdown-list"> <router-link :to="{name: 'pizza'}"> <span>Заказать </span> </router-link></li>
+                                    <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
+                                    <li class="dropdown-list"> <router-link :to="{name: 'new'}"> <span>New </span> </router-link></li>
                                   </ul>
                               </nav>
 
@@ -127,43 +121,12 @@
             </div>
         </div>
         <div class="side-cart-closer"></div>
-        <div class="side-cart d-flex flex-column justify-content-between">
-            <div class="top">
-                <div class="content d-flex justify-content-between align-items-center">
-                    <h6 class="text-uppercase">Корзина {{ cartTotalQty }}</h6> <span class="cart-close text-uppercase">X</span>
-                </div>
-                <div class="cart_items">
-                    <div v-for="product in products" class="items d-flex justify-content-between align-items-center">
-                        <div class="left d-flex align-items-center"> <a href="shop-details-1.html"
-                                                                        class="thumb d-flex justify-content-between align-items-center"> <img :src="product.image_url"
-                             :alt="product.title"> </a>
-                            <div class="text"> <a href="shop-details-1.html">
-                                <h6>{{  product.title }}</h6>
-                            </a>
-                                <p>{{ product.qty }} X <span>Р {{ product.price }}</span> </p>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div @click.prevent="removeProduct(product.id)" class="item-remove"> <i class="flaticon-cross"></i> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <div class="total-ammount d-flex justify-content-between align-items-center">
-                    <h6 class="text-uppercase">Итого:</h6>
-                    <h6 class="ammount text-uppercase">Р {{ cartTotalCost}}</h6>
-                </div>
-                <div class="button-box d-flex justify-content-between"> <router-link to="/cart" class="btn_black"> В корзину
-                </router-link>  </div>
-            </div>
-        </div>
 
+        <pizzalist/>
 
     </header>
 
-    <router-view @sendToParent="showQty"></router-view>
-
+    <router-view></router-view>
 
     <!--  Footer Three start -->
     <footer class="footer-default footer-3 ">
@@ -250,11 +213,11 @@
   </div>
 </template>
 <script>
-
-
-
+/*
 export default {
     name: 'App',
+    components: {
+    },
     mounted() {
         $(document).trigger('change')
         this.getCartProducts()
@@ -265,9 +228,6 @@ export default {
         }
     },
     computed: {
-        showQty(data) {
-            console.log(data)
-        },
         cartTotalCost() {
             let i = 0;
             for (let index = 0; index < this.products.length; index++) {
@@ -284,63 +244,27 @@ export default {
         }
     },
     methods: {
-        getCartProducts() {
-            this.products = JSON.parse(localStorage.getItem('cart'))
-            console.log(this.products);
-        },
 
-        minusQty(product) {
-            if (product.qty === 0) return
-            product.qty--
-            this.updateCart()
-        },
-
-        plusQty(product) {
-            product.qty++
-            this.updateCart()
-        },
-
-        removeProduct(id) {
-            this.products = this.products.filter(product => {
-                return product.id !== id
-            })
-            this.updateCart()
-        },
-
-        updateCart() {
-            localStorage.setItem('cart', JSON.stringify(this.products))
-        },
-
-        addToCart(id, isSingle) {
-
-            let qty = isSingle ? 1 : $('.qtyValue').val()
-
-            let cart = localStorage.getItem('cart')
-            $('.qtyValue').val(1)
-            let newProduct = [
-                {
-                    'id': id,
-                    'qty': qty,
-                }
-            ]
-            if(!cart) {
-                localStorage.setItem('cart', JSON.stringify(newProduct))
-            } else {
-                cart = JSON.parse(cart)
-                cart.forEach(productInCart => {
-                    if (productInCart.id === id) {
-                        productInCart.qty = Number(productInCart.qty) + Number(qty)
-                        newProduct = null
-                    }
-
-                })
-                Array.prototype.push.apply(cart, newProduct)
-                localStorage.setItem('cart', JSON.stringify(cart))
-            }
-        },
     }
 }
+*/
+import Pizzalist from "./views/counter/Pizzalist.vue";
+export default {
+    name: "App",
+    components: {Pizzalist},
+    mounted() {
+        $(document).trigger('change')
+        this.$store.dispatch('main/getProducts')
+    },
+    computed: {
+        products() {
+            return this.$store.state.main.products
+        }
+    },
+    methods: {
 
+    }
+}
 </script>
 <style>
 

@@ -77,7 +77,7 @@
 
 <script>
 export default {
-    name: "index",
+    name: "cart",
     computed: {
         cartTotalCost() {
             let i = 0;
@@ -119,7 +119,6 @@ export default {
         },
         getCartProducts() {
             this.products = JSON.parse(localStorage.getItem('cart'))
-            console.log(this.products);
         },
 
         minusQty(product) {
