@@ -34,7 +34,7 @@
 
 <script>
 export default {
-    name: "PizzaList",
+    name: "PizzaCounter",
     props: ["product"],
     data() {
         return {

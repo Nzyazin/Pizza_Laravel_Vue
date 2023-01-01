@@ -27,7 +27,7 @@
                                 class="flaticon-cross"></i></span> </div>
                             <ul class="page-dropdown-menu">
                                 <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная </span> </router-link></li>
-                                <li class="dropdown-list"> <router-link :to="{name: 'pizza'}"> <span>Заказать </span> </router-link></li>
+                                <li class="dropdown-list"> <router-link to="/home"> <span>Заказать </span> </router-link></li>
                                 <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
                                 <li class="dropdown-list"> <router-link :to="{name: 'new'}"> <span>New </span> </router-link></li>
                             </ul>
@@ -58,7 +58,7 @@
                                                 <ul
                                                     class="page-dropdown-menu d-flex align-items-center justify-content-center">
                                                     <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная</span> </router-link></li>
-                                                    <li class="dropdown-list"> <router-link :to="{name: 'pizza'}"> <span>Заказать </span> </router-link></li>
+                                                    <li class="dropdown-list"> <router-link to="/home"> <span>Заказать </span> </router-link></li>
                                                     <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
                                                     <li class="dropdown-list"> <router-link :to="{name: 'new'}"> <span>New </span> </router-link></li>
                                                 </ul>
@@ -107,7 +107,7 @@
                                     <ul
                                         class="page-dropdown-menu d-flex align-items-center justify-content-center">
                                         <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная</span> </router-link></li>
-                                        <li class="dropdown-list"> <router-link :to="{name: 'pizza'}"> <span>Заказать </span> </router-link></li>
+                                        <li class="dropdown-list"> <router-link to="/home"> <span>Заказать </span> </router-link></li>
                                         <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
                                         <li class="dropdown-list"> <router-link :to="{name: 'new'}"> <span>New </span> </router-link></li>
                                     </ul>
@@ -120,14 +120,10 @@
             </div>
         </div>
         <div class="side-cart-closer"></div>
-
-        <pizzalist/>
-
     </header>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 export default {
     components: { },
     computed: {}

@@ -1,29 +1,22 @@
 <template>
-    <div>
         <Header/>
-        <PizzaCard v-for="product in products" :key="product.id" :product="product"/>
-    </div>
-
+        <PizzaList/>
 </template>
 
 <script>
-import PizzaCard from "../layouts/PizzaCard.vue";
 import Header from "../layouts/Header.vue";
+import Pizzas from "../product/Pizza.vue";
+import PizzaList from "../product/PizzaList.vue";
 export default {
+  name: "Home.vue",
   components: {
       Header,
-      PizzaCard
+      PizzaList,
+      Pizzas,
   },
-  mounted() {
-      this.$store.dispatch('main/getProducts')
-  },
-    computed: {
-        products() {
-            return this.$store.state.main.products
-        }
-    },
-  methods: {
-  }
+    mounted() {
+        $(document).trigger('change')
+    }
 }
 </script>
 

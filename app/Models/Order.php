@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Pizza;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -10,4 +10,5 @@ class Order extends Model
     protected $table = 'orders';
     protected $casts = ['products' => 'array'];
     protected $guarded = false;
+
 }

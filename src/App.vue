@@ -122,12 +122,11 @@ export default {
     }
 }
 */
-import PizzaList from "./views/counter/PizzaList.vue";
+import PizzaList from "./views/counter/PizzaCounter.vue";
 export default {
     name: "App",
     components: {},
     mounted() {
-        $(document).trigger('change')
         this.$store.dispatch('main/getProducts')
     },
     computed: {

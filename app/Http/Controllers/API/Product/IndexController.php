@@ -18,7 +18,8 @@ class IndexController extends Controller
             $ordersC = $orders[$i];
             $products = $ordersC->products;
             $ordersC->products = json_decode($products);
-        }*/
-        return PizzaResource::collection($pizzas);
+        }
+        return PizzaResource::collection($pizzas);*/
+        return Pizza::get();
     }
 }
