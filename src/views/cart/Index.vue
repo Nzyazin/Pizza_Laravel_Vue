@@ -19,24 +19,24 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr v-for="product in products">
+                                    <tr v-for="product in carts" :key="product.id">
                                         <td>
                                             <div class="thumb-box"> <a href="shop-details-1.html" class="thumb">
-                                                <img :src="product.image_url" :alt="product.title">
+                                                <img :src="product.product.image" :alt="product.product.title">
                                             </a> <a href="shop-details-1.html" class="title">
-                                                <h5> {{ product.title }} </h5>
+                                                <h5> {{ product.product.title }} </h5>
                                             </a> </div>
                                         </td>
-                                        <td>Р {{ product.price }}</td>
+                                        <td>{{ product.quantity }}</td>
                                         <td class="qty">
                                             <div class="qtySelector text-center">
-                                                <span @click.prevent="minusQty(product)" class="decreaseQty"><i class="flaticon-minus"></i> </span>
-                                                <input type="number" class="qtyValue" :value="product.qty" />
-                                                <span @click.prevent="plusQty(product)" class="increaseQty"> <i class="flaticon-plus"></i> </span> </div>
+                                                <span @click.prevent="" class="decreaseQty"><i class="flaticon-minus"></i> </span>
+                                                <input type="number" class="qtyValue" :value="product.quantity" />
+                                                <span @click.prevent="increaseToCart" class="increaseQty"> <i class="flaticon-plus"></i> </span> </div>
                                         </td>
-                                        <td class="sub-total">Р {{ product.price * product.qty }}</td>
+                                        <td class="sub-total">Р {{ product.product.price * product.quantity }}</td>
                                         <td>
-                                            <div @click.prevent="removeProduct(product.id)" class="remove"> <i class="flaticon-cross"></i> </div>
+                                            <div @click.prevent="" class="remove"> <i class="flaticon-cross"></i> </div>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -56,7 +56,7 @@
                                         <p>Итоговая сумма:</p>
                                     </div>
                                     <div class="right">
-                                        <p>Р {{ cartTotalCost }}</p>
+                                        <p>Р {{ cartPrice }}</p>
                                     </div>
                                 </li>
                             </ul>
@@ -77,103 +77,29 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Header from "../layouts/Header.vue";
 export default {
     name: "cart",
     components: {Header},
     computed: {
-        cartTotalCost() {
-            let i = 0;
-            for ( let index = 0; index < this.products.length; index++) {
-                i += this.products[index].price * this.products[index].qty;
-            }
-            return i;
-        }
+        carts() {
+            return this.$store.state.cart.cart
+        },
+        ...mapGetters({
+            cartPrice: 'cart/cartPrice',
+        })
     },
     mounted() {
         $(document).trigger('change')
-        this.getCartProducts()
-    },
-    data() {
-        return {
-            products: [],
-            name: '',
-            date_of_birth: '',
-            mob_number: '',
-            address: '',
-        }
     },
     methods: {
-        storeOrder() {
-            this.axios.post('http://127.0.0.1:8000/api/cart', {
-                'products': this.products,
-                'name': this.name,
-                'date_of_birth': this.date_of_birth,
-                'mob_number': this.mob_number,
-                'address': this.address,
-                'total_price': this.cartTotalCost,
+        increaseToCart() {
+            this.$store.dispatch('cart/increaseCart', {
+                product: this.product,
+                quantity: 1,
             })
-                .then( res => {
-                    console.log(res);
-                })
-                .finally(v => {
-                    $(document).trigger('change')
-                })
-        },
-        getCartProducts() {
-            this.products = JSON.parse(localStorage.getItem('cart'))
-        },
-
-        minusQty(product) {
-          if(product.qty === 0 ) return
-          product.qty--
-            this.updateCart()
-        },
-
-        plusQty(product) {
-            product.qty++
-            this.updateCart()
-        },
-
-        removeProduct(id) {
-            this.products = this.products.filter( product => {
-                return product.id !== id
-            })
-            this.updateCart()
-        },
-
-        updateCart() {
-          localStorage.setItem('cart', JSON.stringify(this.products))
-        },
-
-        addToCart(id, isSingle) {
-
-            let qty = isSingle ? 1 : $('.qtyValue').val()
-
-            let cart = localStorage.getItem('cart')
-            $('.qtyValue').val(1)
-            let newProduct = [
-                {
-                    'id': id,
-                    'qty': qty,
-                }
-            ]
-            if(!cart) {
-                localStorage.setItem('cart', JSON.stringify(newProduct))
-            } else {
-                cart = JSON.parse(cart)
-                cart.forEach(productInCart => {
-                    if (productInCart.id === id) {
-                        productInCart.qty = Number(productInCart.qty) + Number(qty)
-                        newProduct = null
-                    }
-
-                })
-                Array.prototype.push.apply(cart, newProduct)
-                localStorage.setItem('cart', JSON.stringify(cart))
-            }
-        },
-
+        }
     }
 }
 </script>

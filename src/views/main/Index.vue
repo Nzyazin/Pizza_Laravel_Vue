@@ -24,8 +24,8 @@
                                             <p class="text wow animated fadeInUp">
                                                 Постоянным посетителям каждую неделю пицца в подарок
                                             </p>
-                                            <a href="/pizza"
-                                                class="btn--primary button style2 wow animated fadeInUp">Ассортимент</a>
+                                            <router-link :to="{name: 'home'}"
+                                                class="btn--primary button style2 wow animated fadeInUp">Ассортимент</router-link>
                                         </div>
                                     </div>
                                 </div>

@@ -16,7 +16,6 @@ const actions = {
         axios.get(`http://127.0.0.1:8000/api/products/${productId}`)
             .then(resource => {
                 commit('set_product', resource.data)
-                console.log(resource.data)
             })
     }
 }

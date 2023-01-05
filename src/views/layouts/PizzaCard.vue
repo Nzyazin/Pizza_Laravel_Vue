@@ -10,17 +10,27 @@
                 <p class="card-text">{{product.description}}</p>
             </div>
             <div class="px-4 pb-3">
-                <button class="btn btn-secondary" @click="">Добавить</button>
+                <button class="btn btn-secondary" @click="addProductToCart">Добавить</button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Header from "./Header.vue";
 export default {
     props: ['product'],
     components: {
+        Header
     },
+    methods: {
+        addProductToCart() {
+            this.$store.dispatch('cart/addProductCart', {
+                product: this.product,
+                quantity: 1,
+            })
+        }
+    }
 }
 </script>
 

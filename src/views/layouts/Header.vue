@@ -10,11 +10,12 @@
                                 <div class="row">
                                     <div class="menu-info d-flex justify-content-between align-items-center">
                                         <div class="menubar"> <span></span> <span></span> <span></span> </div> <a
-                                        href="/" class="logo"> <img src="src/assets/images/logo/logo.png"
+                                        href="/" class="logo"> <img src="/src/assets/images/logo/logo.png"
                                                                     alt="" width="90" height="90"> </a>
                                         <div class="cart-holder">
                                             <a href="#0" class="cart cart-icon position-relative">
-                                                <i class="flaticon-shopping-cart"></i>
+
+                                                <i class="flaticon-shopping-cart">{{cartItemCount}}</i>
                                             </a>
                                         </div>
                                     </div>
@@ -27,7 +28,7 @@
                                 class="flaticon-cross"></i></span> </div>
                             <ul class="page-dropdown-menu">
                                 <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная </span> </router-link></li>
-                                <li class="dropdown-list"> <router-link to="/home"> <span>Заказать </span> </router-link></li>
+                                <li class="dropdown-list"> <router-link :to="{name: 'home'}"> <span>Заказать </span> </router-link></li>
                                 <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
                                 <li class="dropdown-list"> <router-link :to="{name: 'new'}"> <span>New </span> </router-link></li>
                             </ul>
@@ -37,7 +38,7 @@
                 <div class="d-lg-block d-none">
                     <div class="row g-0 position-relative">
                         <div class="col-lg-3 d-flex align-items-center justify-content-center border-rit ">
-                            <div class="logo"> <a href="/"> <img src="src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
+                            <div class="logo"> <a href="/"> <img src="/src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
                             </div>
                         </div>
                         <div class="col-lg-9 g-0 p-0">
@@ -58,7 +59,7 @@
                                                 <ul
                                                     class="page-dropdown-menu d-flex align-items-center justify-content-center">
                                                     <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная</span> </router-link></li>
-                                                    <li class="dropdown-list"> <router-link to="/home"> <span>Заказать </span> </router-link></li>
+                                                    <li class="dropdown-list"> <router-link :to="{name: 'home'}"> <span>Заказать </span> </router-link></li>
                                                     <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
                                                     <li class="dropdown-list"> <router-link :to="{name: 'new'}"> <span>New </span> </router-link></li>
                                                 </ul>
@@ -67,7 +68,7 @@
                                                 <ul class="main-menu__widge-box d-flex align-items-center ">
                                                     <li class="cartm"> <a href="#" class="number cart-icon" > <i
                                                         class="flaticon-shopping-cart" ></i><span
-                                                        class="count" >{{ $store.state.main.products.length }}</span> </a></li>
+                                                        class="count" >{{ cartItemCount }}</span> </a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -86,9 +87,10 @@
                         <div class="row">
                             <div class="menu-info d-flex justify-content-between align-items-center">
                                 <div class="menubar"> <span></span> <span></span> <span></span> </div> <a
-                                href="/" class="logo"> <img src="src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
+                                href="/" class="logo"> <img src="/src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
                                 <div class="cart-holder">
                                     <a href="#" class="cart cart-icon position-relative">
+                                        {{cartItemCount}}
                                         <i class="flaticon-shopping-cart"></i>
                                     </a>
                                 </div>
@@ -99,7 +101,7 @@
             </div>
             <div class="container position-relative d-lg-block d-none">
                 <div class="d-flex align-items-center justify-content-between"> <a href="/" class="logo me-2">
-                    <img src="src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
+                    <img src="/src/assets/images/logo/logo.png" width="90" height="90" alt=""> </a>
                     <div class="mega-menu-default mega-menu d-lg-block d-none">
                         <div class="container ">
                             <div class="row">
@@ -107,7 +109,7 @@
                                     <ul
                                         class="page-dropdown-menu d-flex align-items-center justify-content-center">
                                         <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная</span> </router-link></li>
-                                        <li class="dropdown-list"> <router-link to="/home"> <span>Заказать </span> </router-link></li>
+                                        <li class="dropdown-list"> <router-link :to="{name: 'home'}"> <span>Заказать </span> </router-link></li>
                                         <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
                                         <li class="dropdown-list"> <router-link :to="{name: 'new'}"> <span>New </span> </router-link></li>
                                     </ul>
@@ -124,11 +126,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
     components: { },
-    computed: {}
+    computed: {
+        ...mapGetters({
+            cartItemCount: 'cart/cartItemCount'
+        })
+    }
 };
 </script>
-<style>
+<style scoped>
 
 </style>

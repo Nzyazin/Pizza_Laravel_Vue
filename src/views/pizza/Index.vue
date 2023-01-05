@@ -10,9 +10,9 @@ import PizzaList from "../product/PizzaList.vue";
 export default {
   name: "Home.vue",
   components: {
+      Pizzas,
       Header,
       PizzaList,
-      Pizzas,
   },
     mounted() {
         $(document).trigger('change')
