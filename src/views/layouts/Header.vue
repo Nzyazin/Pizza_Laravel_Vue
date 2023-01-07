@@ -64,9 +64,9 @@
                                             </nav>
                                             <div class="right d-flex align-items-center justify-content-end" >
                                                 <ul class="main-menu__widge-box d-flex align-items-center ">
-                                                    <li class="cartm"> <a href="#" class="number cart-icon" > <i
+                                                    <li class="cartm"> <router-link :to="{name: 'cart'}" class="number cart-icon" > <i
                                                         class="flaticon-shopping-cart" ></i><span
-                                                        class="count" >{{ cartItemCount }}</span> </a></li>
+                                                        class="count" >{{ cartItemCount }}</span> </router-link></li>
                                                 </ul>
                                             </div>
                                         </div>
