@@ -10909,13 +10909,13 @@ pagination start
   border-left: 1px solid #e4e4e4;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .cart-table tbody tr td {
-    padding: 30px 30px 30px;
+    padding: 0;
   }
 
-  .cart-table {
-    min-width: 992px;
+  .container {
+      max-width: none;
   }
 
   .cart-table tbody tr h5 {

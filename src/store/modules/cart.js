@@ -8,6 +8,12 @@ const actions = {
     },
     increaseCart({commit}, {product, quantity}) {
         commit('increase_cart', {product, quantity})
+    },
+    decreaseCart({commit}, {product, quantity}) {
+        commit('decrease_cart', {product, quantity})
+    },
+    removeProduct({commit}, product) {
+        commit('remove_product', product)
     }
 }
 
@@ -25,17 +31,19 @@ const mutations = {
             quantity
         })
     },
-    increase_cart(state, {product, quantity}) {
-        let productCart = state.cart.find(item => {
-            return item.product.id
-        })
-        if (productCart) {
-            productCart.quantity += quantity
-            return
+    increase_cart(state, {product}) {
+        product.quantity += 1
+    },
+    decrease_cart(state, {product}) {
+        if (product.quantity > 1) {
+            product.quantity -= 1
         }
-        state.cart.push({
-            product,
-            quantity
+    },
+    remove_product(state, product) {
+        state.cart = state.cart.filter(item => {
+            console.log(item.product.id)
+            console.log(product.product.id)
+            return item.product.id !== product.product.id
         })
     }
 }

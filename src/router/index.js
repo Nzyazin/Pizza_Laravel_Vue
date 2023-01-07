@@ -30,13 +30,6 @@ const router = createRouter({
       component: Cart,
       props: true
     },
-    {
-      path: "/new",
-      name: "new",
-      component: () => import('../views/new/Index.vue'),
-      props: true
-    },
-
   ]
 })
 

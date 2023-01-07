@@ -19,26 +19,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr v-for="product in carts" :key="product.id">
-                                        <td>
-                                            <div class="thumb-box"> <a href="shop-details-1.html" class="thumb">
-                                                <img :src="product.product.image" :alt="product.product.title">
-                                            </a> <a href="shop-details-1.html" class="title">
-                                                <h5> {{ product.product.title }} </h5>
-                                            </a> </div>
-                                        </td>
-                                        <td>{{ product.quantity }}</td>
-                                        <td class="qty">
-                                            <div class="qtySelector text-center">
-                                                <span @click.prevent="" class="decreaseQty"><i class="flaticon-minus"></i> </span>
-                                                <input type="number" class="qtyValue" :value="product.quantity" />
-                                                <span @click.prevent="increaseToCart" class="increaseQty"> <i class="flaticon-plus"></i> </span> </div>
-                                        </td>
-                                        <td class="sub-total">Р {{ product.product.price * product.quantity }}</td>
-                                        <td>
-                                            <div @click.prevent="" class="remove"> <i class="flaticon-cross"></i> </div>
-                                        </td>
-                                    </tr>
+                                        <IncrDecr v-for="product in carts" :key="product.id" :product="product"/>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -78,10 +60,13 @@
 
 <script>
 import { mapGetters } from "vuex";
+import IncrDecr from "../cart/IncrDecr.vue"
 import Header from "../layouts/Header.vue";
 export default {
     name: "cart",
-    components: {Header},
+    components: {Header,
+        IncrDecr
+    },
     computed: {
         carts() {
             return this.$store.state.cart.cart
@@ -93,14 +78,7 @@ export default {
     mounted() {
         $(document).trigger('change')
     },
-    methods: {
-        increaseToCart() {
-            this.$store.dispatch('cart/increaseCart', {
-                product: this.product,
-                quantity: 1,
-            })
-        }
-    }
+
 }
 </script>
 
