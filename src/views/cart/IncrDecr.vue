@@ -41,7 +41,6 @@ export default {
             })
         },
         removeToProduct() {
-            console.log(this.product)
             this.$store.dispatch('cart/removeProduct', this.product)
         },
     }

@@ -41,8 +41,6 @@ const mutations = {
     },
     remove_product(state, product) {
         state.cart = state.cart.filter(item => {
-            console.log(item.product.id)
-            console.log(product.product.id)
             return item.product.id !== product.product.id
         })
     }
