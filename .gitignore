@@ -12,6 +12,7 @@ lerna-debug.log*
 coverage
 *.local
 
+
 /cypress/videos/
 /cypress/screenshots/
 
@@ -24,3 +25,4 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+node_modules/
