@@ -26,7 +26,7 @@ class StoreRequest extends FormRequest
         return [
             'title'=> 'nullable|string',
             'description'=> 'nullable|string',
-            'image_url'=> 'nullable',
+            'preview_image'=> 'nullable',
             'price'=> 'nullable|integer',
             'old_price' => 'nullable|integer',
             'is_published'=> 'nullable|date',
