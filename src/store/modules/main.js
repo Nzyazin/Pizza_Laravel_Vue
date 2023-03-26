@@ -7,13 +7,13 @@ const state = {
 
 const actions = {
     getProducts({commit}) {
-        axios.get('http://127.0.0.1:8000/api/products')
+        axios.get('http://admin.pizza.local/api/products')
             .then(resource => {
                 commit('set_products', resource.data)
             })
     },
     getProduct({commit}, productId) {
-        axios.get(`http://127.0.0.1:8000/api/products/${productId}`)
+        axios.get(`http://admin.pizza.local/api/products/${productId}`)
             .then(resource => {
                 commit('set_product', resource.data)
             })
