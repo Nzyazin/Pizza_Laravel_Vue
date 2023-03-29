@@ -986,6 +986,16 @@ jQuery(function ($) {
       $("#priceRange").val("$" + $("#price-range").slider("values", 0) + " - $" + $("#price-range").slider("values", 1));
     };
 
+    // Input mask
+      const phone = $('input[type="tel"]'),
+          mask = new Inputmask({
+              mask: "+7 (999) 999-99-99",
+              showMaskOnHover: false,
+              clearIncomplete: false,
+          });
+
+      mask.mask(phone);
+
 
     /****======  Bottom to Top Scroll Js  ======*******/
     var ScrollTop = $(".scrollToTop");
