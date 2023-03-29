@@ -2,7 +2,7 @@
     <tr>
         <td>
             <div class="thumb-box"> <a href="shop-details-1.html" class="thumb">
-                <img :src="product.product.image" :alt="product.product.title">
+                <img :src="product.product.preview_image" :alt="product.product.title">
             </a> <a href="shop-details-1.html" class="title">
                 <h5> {{ product.product.title }} </h5>
             </a> </div>

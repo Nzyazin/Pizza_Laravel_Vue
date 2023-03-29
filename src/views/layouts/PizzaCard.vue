@@ -1,7 +1,7 @@
 <template>
     <div class="col-3 mt-3">
         <div class="card h-100 text-left">
-            <img class="w-100" :src="product.image" alt />
+            <img class="w-100" :src="product.preview_image" alt />
             <div class="card-body">
                 <h4 class="card-title">
                     <router-link :to="{name: 'product', params: {id: product.id}}">{{ product.title }}</router-link>

@@ -18,7 +18,7 @@ class PizzaResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'image_url' => $this->imageUrl,
+            'preview_image' => $this->imageUrl,
             'price' => $this->price,
             'old_price' => $this->old_price,
             'is_published' => $this->is_published,

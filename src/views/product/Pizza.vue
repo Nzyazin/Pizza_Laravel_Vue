@@ -2,7 +2,7 @@
     <Header/>
     <div class="row mt-5" v-if="product">
         <div class="col-4">
-            <img :src="product.image" class="w-100" alt=""/>
+            <img :src="product.preview_image" class="w-100" alt=""/>
         </div>
         <div class="col-8">
             <h1>{{ product.title }}</h1>

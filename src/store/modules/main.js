@@ -9,13 +9,13 @@ const actions = {
     getProducts({commit}) {
         axios.get('http://admin.pizza.local/api/products')
             .then(resource => {
-                commit('set_products', resource.data)
+                commit('set_products', resource.data.data)
             })
     },
     getProduct({commit}, productId) {
         axios.get(`http://admin.pizza.local/api/products/${productId}`)
-            .then(resource => {
-                commit('set_product', resource.data)
+            .then(resource => {                
+                commit('set_product', resource.data.data)
             })
     }
 }

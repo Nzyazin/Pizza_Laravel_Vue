@@ -64,7 +64,8 @@ import IncrDecr from "../cart/IncrDecr.vue"
 import Header from "../layouts/Header.vue";
 export default {
     name: "cart",
-    components: {Header,
+    components: {
+        Header,
         IncrDecr
     },
     computed: {
