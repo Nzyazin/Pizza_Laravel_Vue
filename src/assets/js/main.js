@@ -987,14 +987,14 @@ jQuery(function ($) {
     };
 
     // Input mask
-      const phone = $('input[type="tel"]'),
-          mask = new Inputmask({
-              mask: "+7 (999) 999-99-99",
-              showMaskOnHover: false,
-              clearIncomplete: false,
-          });
+    const phone = $('input[type="tel"]'),
+        mask = new Inputmask({
+            mask: "+7 (999) 999-99-99",
+            showMaskOnHover: false,
+            clearIncomplete: false,
+        });
 
-      mask.mask(phone);
+    mask.mask(phone);
 
 
     /****======  Bottom to Top Scroll Js  ======*******/
