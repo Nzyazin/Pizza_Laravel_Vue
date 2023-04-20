@@ -986,6 +986,22 @@ jQuery(function ($) {
       $("#priceRange").val("$" + $("#price-range").slider("values", 0) + " - $" + $("#price-range").slider("values", 1));
     };
 
+    // Input mask for name
+    const name = $('[data-role="name-mask"]');
+    var im = new Inputmask({mask: "a{*}"});
+    im.mask(name);
+
+    // Input mask for date                                
+    var dateMask = IMask(
+      document.getElementById('date-mask'),
+      {
+        mask: Date,
+        min: new Date(1902, 0, 1),
+        max: new Date(2025, 0, 1),
+        lazy: true
+      });
+
+
     // Input mask for phone
     const phone = $('input[type="tel"]'),
         mask = new Inputmask({
@@ -995,64 +1011,6 @@ jQuery(function ($) {
         });
 
     mask.mask(phone);
-
-    // Validating datetime
-
-    var input = document.querySelectorAll('.js-date')[0];
-  
-    var dateInputMask = function dateInputMask(elm) {
-      elm.addEventListener('keypress', function(e) {
-        if(e.keyCode < 47 || e.keyCode > 57) {
-          e.preventDefault();
-        }
-        
-        var len = elm.value.length;
-        
-        // If we're at a particular place, let the user type the slash
-        // i.e., 12/12/1212
-        if(len !== 1 || len !== 3) {
-          if(e.keyCode == 47) {
-            e.preventDefault();
-          }
-        }
-
-        if(len === 0) {
-          if(elm.value > 3) {
-            elm.value = '';
-          }
-        }
-        
-        // If they don't add the slash, do it for them...
-        if(len === 2) {
-          elm.value += '/';
-        }
-
-        // If they don't add the slash, do it for them...
-        if(len === 5) {
-          elm.value += '/';
-        }
-      });
-    };
-      
-
-    const maskDate = value => {
-      let v = value.replace(/\D/g,'').slice(0, 10);
-      if (v.length >= 5) {
-        return `${v.slice(0,2)}/${v.slice(2,4)}/${v.slice(4)}`;
-      }
-      else if (v.length >= 3) {
-        return `${v.slice(0,2)}/${v.slice(2)}`;
-      }
-      return v
-    }
-
-    var inputElements = document.querySelectorAll("input[data-format]");
-    inputElements.forEach(input => {
-      let m = new IMask(input, {
-        mask: input.getAttribute("data-format")
-      });
-    });
-
 
     /****======  Bottom to Top Scroll Js  ======*******/
     var ScrollTop = $(".scrollToTop");

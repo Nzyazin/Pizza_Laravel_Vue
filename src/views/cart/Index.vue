@@ -46,10 +46,10 @@
                     </div>
                 </div>
                 <div style="display: block;" class="row w-25">
-                    <input style="margin: 12px 12px; text-transform: capitalize;" type="name" v-model="name" class="js-name" id="input_id" placeholder="Имя">
-                    <input style="margin: 12px 12px;" type="text" v-model="date_of_birth" class="js-date" placeholder="День рождения" maxlength="10">
+                    <input style="margin: 12px 12px; text-transform: capitalize;" type="name" v-model="name" class="js-name" id="input_id" data-role="name-mask" placeholder="Имя">
+                    <input style="margin: 12px 12px;" placeholder="Дата рождения" v-model="date_of_birth" id="date-mask">
                     <input style="margin: 12px 12px;" type="tel" v-model="mob_number" placeholder="Сотовый телефон">
-                    <input style="margin: 12px 12px;" type="text" v-model="address" placeholder="Адрес">
+                    <input style="margin: 12px 12px;" v-model="address" type="name" placeholder="Адрес">                    
                     <button @click.prevent="storeOrder" class="btn--primary mt-30" style="margin: 12px 12px;" type="submit">Отправить </button>
                 </div>
             </div>
@@ -79,6 +79,16 @@ export default {
     mounted() {
         $(document).trigger('change')
     },
+
+    data() {
+        return {
+            products: [],
+            name: '',
+            mob_number: '',
+            address: '',
+            date_of_birth: '',
+        }
+    }
 
 }
 </script>
