@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use League\CommonMark\Extension\CommonMark\Node\Block\IndentedCode;
 use App\Http\Controllers\API\Product\ProductsController;
+use App\Http\Controllers\Order\StoreController as OrderStoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/pizza', IndexController::class);
 Route::post('/cart', StoreController::class);
+Route::post('/orders', StoreController::class);
 
 Route::group(['namespace' => 'Api'], function() {
     Route::get('/products', [ProductsController::class, 'index']);

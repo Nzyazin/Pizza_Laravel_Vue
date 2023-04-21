@@ -989,18 +989,7 @@ jQuery(function ($) {
     // Input mask for name
     const name = $('[data-role="name-mask"]');
     var im = new Inputmask({mask: "a{*}"});
-    im.mask(name);
-
-    // Input mask for date                                
-    var dateMask = IMask(
-      document.getElementById('date-mask'),
-      {
-        mask: Date,
-        min: new Date(1902, 0, 1),
-        max: new Date(2025, 0, 1),
-        lazy: true
-      });
-
+    im.mask(name);    
 
     // Input mask for phone
     const phone = $('input[type="tel"]'),
