@@ -83,8 +83,9 @@ export default {
     methods: {
         storeOrder() {
             console.log(this.$store.state.cart.cart);
+            console.log(this.name)
             this.axios.post('http://admin.pizza.local/api/orders', {
-                'products' : this.products,
+                'products' : this.$store.state.cart.cart,
                 'name'     : this.name,
                 'date_of_birth': this.date_of_birth,
                 'mob_number': this.mob_number,
@@ -93,9 +94,6 @@ export default {
             })
                 .then(res => {
                     console.log(res)
-                })
-                .finally( v => {
-                    $(docuemnt).trigged('changed')
                 })
         }
     },

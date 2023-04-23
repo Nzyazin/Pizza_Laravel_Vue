@@ -21,11 +21,11 @@ class StoreRequest extends FormRequest
     {
         return [
             'products' => 'required|array',
-            'name' => 'required|string',
-            'date_of_birth' => 'required|date',
-            'mob_number' => 'required|integer',
-            'address' => 'required|string',
-            'total_price' => 'required|integer',
+            'name' => 'nullable|string',
+            'date_of_birth' => 'nullable|date',
+            'mob_number' => 'nullable|string',
+            'address' => 'nullable|string',
+            'total_price' => 'nullable|integer',
         ];
     }
 }
