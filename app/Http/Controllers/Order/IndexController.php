@@ -16,9 +16,9 @@ class IndexController extends Controller
 
         $ordersCount = Order::count();
         for ($i = 0; $i < $ordersCount; $i++) {
-            $ordersC = $orders[$i];
-            $products = $ordersC->products;
-            $ordersC->products = json_decode($products);
+            $ordersC = $orders[$i];            
+            $products = $ordersC->products;            
+            $ordersC->products = json_decode($products);            
         }
         //dd($orders);
 

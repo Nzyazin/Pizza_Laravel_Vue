@@ -14,21 +14,19 @@ class StoreController extends Controller
     {
         $data = $request->validated();
 
-        return $data;
+        $user = User::firstOrCreate([
+            'mob_number' => $data['mob_number']
+        ],[
+            'name' => $data['name'],
+            'address' => $data['address'],
+            'date_of_birth' => $data['date_of_birth'],
+        ]);
 
-        // $user = User::firstOrCreate([
-        //     'mob_number' => $data['mob_number']
-        // ],[
-        //     'name' => $data['name'],
-        //     'address' => $data['address'],
-        //     'date_of_birth' => $data['date_of_birth'],
-        // ]);
-
-        // $order = Order::create([
-        //     'products' => json_encode($data['products']),
-        //     'user_id' => $user->id,
-        //     'total_price' => $data['total_price'],
-        // ]);
-        // return new OrderResource($order);
+        $order = Order::create([
+            'products' => json_encode($data['products']),
+            'user_id' => $user->id,
+            'total_price' => $data['total_price'],
+        ]);
+        return new OrderResource($order);
     }
 }
