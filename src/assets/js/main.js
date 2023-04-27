@@ -986,20 +986,7 @@ jQuery(function ($) {
       $("#priceRange").val("$" + $("#price-range").slider("values", 0) + " - $" + $("#price-range").slider("values", 1));
     };
 
-    // Input mask for name
-    const name = $('[data-role="name-mask"]');
-    var im = new Inputmask({regex: "[a-zа-я]*"});
-    im.mask(name);    
-
-    // Input mask for phone
-    const phone = $('input[type="tel"]'),
-        mask = new Inputmask({
-            mask: "+7 (999) 999-99-99",
-            showMaskOnHover: false,
-            clearIncomplete: false,
-        });
-
-    mask.mask(phone);
+    
 
     /****======  Bottom to Top Scroll Js  ======*******/
     var ScrollTop = $(".scrollToTop");
