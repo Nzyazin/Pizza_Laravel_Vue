@@ -25,28 +25,43 @@
                 <form action="{{ route('order.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <input type="text" name="user_id" class="form-control" placeholder="ИД пользователя">
+                        <input type="text" name="user_id" class="form-control" placeholder="ИД клиента">
                     </div>
                     <div class="form-group">
-                        <textarea name="description" class="form-control" cols="30" rows="10" placeholder="Описание"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="price" class="form-control" placeholder="Цена">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="old_price" class="form-control" placeholder="Старая цена">
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input name="preview_image" type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                        <div class="col-12 product-image-thumbs">
+                            @foreach($orders as $order)
+                                <div>
+                                    <div class="product-image-thumb active">                                
+                                        <img src="{{}}" alt="Product Image">                
+                                    </div>
+                                    <div class="input-group quantity_goods">
+                                        <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" value="1" title="Qty">
+                                        <input type="button" value="-" id="button_minus">
+                                        <input type="button" value="+" id="button_plus">
+                                    </div>  
+                                </div>        
+                            @endforeach
+                                                                          
+                            <div class="product-image-thumb">
+                                <img src="../../dist/img/prod-2.jpg" alt="Product Image">
                             </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text">Загрузка</span>
+                            <div class="product-image-thumb">
+                                <img src="../../dist/img/prod-3.jpg" alt="Product Image">
+                            </div>
+                            <div class="product-image-thumb">
+                                <img src="../../dist/img/prod-4.jpg" alt="Product Image">
+                            </div>
+                            <div class="product-image-thumb">
+                                <img src="../../dist/img/prod-5.jpg" alt="Product Image">
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <input type="text" name="payment_status" class="form-control" placeholder="Статус заказа">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="total_price" class="form-control" placeholder="Общая стоимость">
+                    </div>                  
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Добавить">
                     </div>

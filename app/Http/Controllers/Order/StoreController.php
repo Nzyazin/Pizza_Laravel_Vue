@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Order;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\API\Order\StoreRequest;
+use App\Http\Requests\Order\StoreRequest;
 use App\Models\Order;
 use Illuminate\Support\Facades\Storage;
 

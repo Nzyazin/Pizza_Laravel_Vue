@@ -25,7 +25,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-
+                            <div class="card-header">
+                                <a href="{{ route('order.create') }}" class="btn btn-primary">Добавить</a>
+                            </div>
 
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
@@ -40,8 +42,7 @@
                                     </thead>
                                     <tbody>
                                     
-                                    @foreach($orders as $order)
-                                    
+                                    @foreach($orders as $order)                                    
                                         <tr>
                                             <td>{{ $order->id }}</td>
                                             <td><a href="{{ route('user.show', $order->user_id) }}">{{ $order->user_id }}</td>
