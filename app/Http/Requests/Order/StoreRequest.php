@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'user_id'=> 'nullable|integer',
-            'products'=> 'nullable|string',
+            'products'=> 'nullable|array',
             'payment_status'=> 'nullable|integer',
             'total_price'=> 'nullable|integer',
         ];

@@ -28,33 +28,30 @@
                         <input type="text" name="user_id" class="form-control" placeholder="ИД клиента">
                     </div>
                     <div class="form-group">
-                        <div class="col-12 product-image-thumbs">
-                            @foreach($orders as $order)
-                                <div>
-                                    <div class="product-image-thumb active">                                
-                                        <img src="{{}}" alt="Product Image">                
-                                    </div>
-                                    <div class="input-group quantity_goods">
-                                        <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" value="1" title="Qty">
-                                        <input type="button" value="-" id="button_minus">
-                                        <input type="button" value="+" id="button_plus">
-                                    </div>  
-                                </div>        
+                        <table class="table table-hover text-nowrap">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Наименование</th>
+                                <th>Описание</th>
+                                <th>Картинка</th>
+                                <th>Цена</th>
+                                <th>Количество</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($pizzas as $pizza)
+                                <tr>
+                                    <td data-id={{$pizza->id}}>{{ $pizza->id }}</td>
+                                    <td><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->title }}</a></td>
+                                    <td>{{ $pizza->description }}</td>
+                                    <td>{{ $pizza->preview_image }}</td>
+                                    <td>{{ $pizza->price }}</td>
+                                    <td></td>
+                                </tr>
                             @endforeach
-                                                                          
-                            <div class="product-image-thumb">
-                                <img src="../../dist/img/prod-2.jpg" alt="Product Image">
-                            </div>
-                            <div class="product-image-thumb">
-                                <img src="../../dist/img/prod-3.jpg" alt="Product Image">
-                            </div>
-                            <div class="product-image-thumb">
-                                <img src="../../dist/img/prod-4.jpg" alt="Product Image">
-                            </div>
-                            <div class="product-image-thumb">
-                                <img src="../../dist/img/prod-5.jpg" alt="Product Image">
-                            </div>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="form-group">
                         <input type="text" name="payment_status" class="form-control" placeholder="Статус заказа">
