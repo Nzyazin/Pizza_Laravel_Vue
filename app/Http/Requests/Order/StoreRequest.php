@@ -24,10 +24,12 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id'=> 'nullable|integer',
-            'products'=> 'nullable|array',
-            'payment_status'=> 'nullable|integer',
-            'total_price'=> 'nullable|integer',
+            'products' => 'nullable|array',
+            'name' => 'nullable|string',
+            'date_of_birth' => 'nullable|date',
+            'mob_number' => 'nullable|string',
+            'address' => 'nullable|string',
+            'total_price' => 'nullable|integer'
         ];
     }
 }

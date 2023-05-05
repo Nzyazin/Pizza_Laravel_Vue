@@ -107,7 +107,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('adminlte/plugins/jquery/jquery.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -120,5 +120,7 @@
 <script src="{{ asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
+<!-- Custom JS -->
+<script src="{{ asset('js/custom.js') }}"></script>
 </body>
 </html>

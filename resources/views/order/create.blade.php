@@ -25,7 +25,16 @@
                 <form action="{{ route('order.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <input type="text" name="user_id" class="form-control" placeholder="ИД клиента">
+                        <input type="text" name="name" class="form-control" placeholder="Имя">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="date_of_birth" class="form-control" placeholder="Дата рождения">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="mob_number" class="form-control" placeholder="Сотовый телефон">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="address" class="form-control" placeholder="Адрес">
                     </div>
                     <div class="form-group">
                         <table class="table table-hover text-nowrap">
@@ -40,25 +49,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($pizzas as $pizza)
+                            @foreach($pizzas as $pizza)                                
                                 <tr>
                                     <td data-id={{$pizza->id}}>{{ $pizza->id }}</td>
                                     <td><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->title }}</a></td>
                                     <td>{{ $pizza->description }}</td>
-                                    <td>{{ $pizza->preview_image }}</td>
+                                    <td><img style="max-width: 96px;" src="http://admin.pizza.local/storage/{{ $pizza->preview_image }}"></td>
                                     <td>{{ $pizza->price }}</td>
-                                    <td></td>
+                                    <td><input type="text" data-id="{{ $pizza->id }}" name="quantity" class="form-control" placeholder="Количество"></td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="payment_status" class="form-control" placeholder="Статус заказа">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="total_price" class="form-control" placeholder="Общая стоимость">
-                    </div>                  
+                    </div>                 
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Добавить">
                     </div>

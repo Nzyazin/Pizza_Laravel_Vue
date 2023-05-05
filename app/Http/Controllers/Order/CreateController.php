@@ -12,7 +12,7 @@ class CreateController extends Controller
     {
         $orders = Order::all();
         //dd($orders);
-        $pizzas = Pizza::all();;
+        $pizzas = Pizza::all();
 
         $ordersCount = Order::count();
         for ($i = 0; $i < $ordersCount; $i++) {
