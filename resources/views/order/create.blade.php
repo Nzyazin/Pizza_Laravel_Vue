@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <input type="text" name="address" class="form-control" placeholder="Адрес">
-                    </div>
+                    </div>                    
                     <div class="form-group">
                         <table class="table table-hover text-nowrap">
                             <thead>
@@ -48,15 +48,16 @@
                                 <th>Количество</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            @foreach($pizzas as $pizza)                                
+                            <tbody>                            
+                            
+                            @foreach($pizzas as $pizza)                                                                                        
                                 <tr>
-                                    <td data-id={{$pizza->id}}>{{ $pizza->id }}</td>
-                                    <td><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->title }}</a></td>
-                                    <td>{{ $pizza->description }}</td>
-                                    <td><img style="max-width: 96px;" src="http://admin.pizza.local/storage/{{ $pizza->preview_image }}"></td>
-                                    <td>{{ $pizza->price }}</td>
-                                    <td><input type="text" data-id="{{ $pizza->id }}" name="quantity" class="form-control" placeholder="Количество"></td>
+                                    <td name="">{{ $pizza->id }}</td>
+                                    <td name=""><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->title }}</a></td>
+                                    <td name="">{{ $pizza->description }}</td>
+                                    <td name=""><img style="max-width: 96px;" src="http://admin.pizza.local/storage/{{ $pizza->preview_image }}"></td>
+                                    <td name="">{{ $pizza->price }}</td>
+                                    <td><input type="text" name="products[quantity][]" class="form-control" placeholder="Количество"></td>
                                 </tr>
                             @endforeach
                             </tbody>

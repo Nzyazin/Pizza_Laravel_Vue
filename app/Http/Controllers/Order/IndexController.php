@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Order;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
-use App\Models\User;
-use App\Models\Pizza;
 
 
 class IndexController extends Controller
