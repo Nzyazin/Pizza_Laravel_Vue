@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Пицца</h1>
+                    <h1 class="m-0">Заказ</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -32,9 +32,9 @@
                                     <div class="card">
                                         <div class="card-header d-flex p-3">
                                             <div class="mr-4">
-                                                <a href="{{ route('pizza.edit', $pizzas->id) }}" class="btn btn-primary">Редактировать</a>
+                                                <a href="{{ route('order.edit', $orders->id) }}" class="btn btn-primary">Редактировать</a>
                                             </div>
-                                            <form action="{{ route('pizza.delete', $pizzas->id) }}" method="post">
+                                            <form action="{{ route('order.delete', $orders->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <input type="submit" class="btn btn-danger" value="Удалить">
@@ -45,32 +45,24 @@
                                             <table class="table table-hover text-nowrap">
                                                 <tbody>
                                                     <tr>
-                                                        <td>ID</td>
-                                                        <td>{{ $pizzas->id }}</td>
+                                                        <td>ID заказа</td>
+                                                        <td>{{ $orders->id }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Наименование</td>
-                                                        <td>{{ $pizzas->title }}</td>
+                                                        <td>ID пользователя</td>
+                                                        <td><a href="{{ route('user.show', $orders->user_id) }}">{{ $orders->user_id }}</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Описание</td>
-                                                        <td>{{ $pizzas->description }}</td>
+                                                        <td>Продукты</td>{{dd(json_decode($orders->products))}}
+                                                        <td>@for($i = 0; $i < count(json_decode($orders->products)); $i++)<a href="{{ route('pizza.show', $orders->products[$i]['product']['id']) }}">{{ substr(print_r($orders->products[$i]['product']['title']), 0, -1) }}</a> : шт. {{ substr(print_r($orders->products[$i]['quantity']), 0, -1) }};<br> @endfor</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Картинка</td>
-                                                        <td>{{ $pizzas->preview_image }}</td>
+                                                        <td>Общая стоимость</td>
+                                                        <td>{{ $orders->total_price }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Цена</td>
-                                                        <td>{{ $pizzas->price }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Старая цена</td>
-                                                        <td>{{ $pizzas->old_price }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Добавлен</td>
-                                                        <td>{{ $pizzas->is_published }}</td>
+                                                        <td>Статус оплаты</td>
+                                                        <td>{{ $orders->payment_status }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>

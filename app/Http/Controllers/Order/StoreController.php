@@ -12,22 +12,20 @@ use App\Models\Pizza;
 class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request)
-    {
-
-        $orders = Order::all();
-        
+    {       
         $pizzas = Pizza::all();
-        //dd($orders);
+
         $products = [];
         $total_price = 0;
         
         $data = $request->validated();
-
+        
+        //Цикл сборки заказа в объект из существующих продуктов
         for ($i = 0; $i < count($data["products"]["quantity"]); $i++) {            
             
             if ($data["products"]["quantity"][$i] != 0) {
                 $total_price += intval($pizzas[$i]["price"]) * intval($data["products"]["quantity"][$i]);
-                array_push($products, array('products' => array(
+                array_push($products, array(
                     "product" => 
                         array(
                             "id" => $i+1, 
@@ -37,13 +35,10 @@ class StoreController extends Controller
                             "price" => $pizzas[$i]["price"], 
                             "old_price" => $pizzas[$i]["old_price"], 
                             "is_published" => $pizzas[$i]["is_published"]),
-                    "quantity" => intval($data["products"]["quantity"][$i]))));
-                               
+                    "quantity" => intval($data["products"]["quantity"][$i])));                               
             }
         }
-
-        //dd(json_encode($products));
-
+        //Если номер есть, то заказ добавляется к существующему пользователю
         $user = User::firstOrCreate([
             'mob_number' => $data['mob_number']
         ],[
@@ -52,11 +47,12 @@ class StoreController extends Controller
             'date_of_birth' => $data['date_of_birth'],
         ]);
 
+        //Создание заказа
         $order = Order::create([
             'products' => json_encode($products),
             'user_id' => $user->id,
             'total_price' => $total_price,
         ]);
-        return new OrderResource($order);
+        return redirect()->route('order.index');
     }
 }
