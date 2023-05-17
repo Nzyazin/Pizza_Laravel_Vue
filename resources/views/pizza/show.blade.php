@@ -58,7 +58,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Картинка</td>
-                                                        <td>{{ $pizzas->preview_image }}</td>
+                                                        <td><img style="max-width: 96px;" src="http://admin.pizza.local/storage/{{ $pizzas->preview_image }}"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Цена</td>

@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Редактировать продукт</h1>
+                    <h1 class="m-0">Редактировать заказ</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -22,42 +22,45 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                <form action="{{ route('order.update', $order->id) }}" method="post">
+                <form action="{{ route('order.update', $orders->id) }}" method="post">
                     @csrf
                     @method('patch')
                     <div class="form-group">
-                        <input type="text" name="title" class="form-control" value="{{ $order->title }}" placeholder="Наименование">
-                    </div>
+                        <table class="table table-hover text-nowrap">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Наименование</th>
+                                <th>Описание</th>
+                                <th>Картинка</th>
+                                <th>Цена</th>
+                                <th>Количество</th>
+                            </tr>
+                            </thead>
+                            <tbody>                            
+                            @foreach($pizzas as $pizza)                                                                                        
+                                <tr>
+                                    <td name="">{{ $pizza->id }}</td>
+                                    <td name=""><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->title }}</a></td>
+                                    <td name="">{{ $pizza->description }}</td>
+                                    <td name=""><img style="max-width: 96px;" src="http://admin.pizza.local/storage/{{ $pizza->preview_image }}"></td>
+                                    <td name="">{{ $pizza->price }}</td>
+                                    <td><input type="text" name="products[quantity][]" class="form-control" placeholder="Количество"></td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>              
                     <div class="form-group">
-                        <textarea name="description" class="form-control" cols="30" rows="10" id="myTextarea" placeholder="Описание"></textarea>
-                    </div>
+                        <input type="text" name="price" class="form-control" value="" placeholder="Статус оплаты">
+                    </div>                   
                     <div class="form-group">
-                        <input type="text" name="price" class="form-control" value="{{ $order->price }}" placeholder="Цена">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="old_price" class="form-control" value="{{ $order->old_price }}" placeholder="Старая цена">
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input name="preview_image" type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
-                            </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text">Загрузка</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Добавить">
+                        <input type="submit" class="btn btn-primary" value="Редактировать">
                     </div>
                 </form>
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
-    <script>
-        document.getElementById("myTextarea").defaultValue = "{{ $pizzas->description }}";
-    </script>
+    <!-- /.content -->    
 @endsection

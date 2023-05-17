@@ -22,7 +22,6 @@ class StoreController extends Controller
         
         //Цикл сборки заказа в объект из существующих продуктов
         for ($i = 0; $i < count($data["products"]["quantity"]); $i++) {            
-            
             if ($data["products"]["quantity"][$i] != 0) {
                 $total_price += intval($pizzas[$i]["price"]) * intval($data["products"]["quantity"][$i]);
                 array_push($products, array(

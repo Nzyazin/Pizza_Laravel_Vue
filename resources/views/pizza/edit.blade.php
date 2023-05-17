@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                <form action="{{ route('pizza.update', $pizzas->id) }}" method="post">
+                <form action="{{ route('pizza.update', $pizzas->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('patch')
                     <div class="form-group">
