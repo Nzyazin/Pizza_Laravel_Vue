@@ -43,7 +43,7 @@
                                     <tbody>
                                     
                                     @foreach($orders as $order)                                    
-                                        <tr>{{ dd($order->products) }}
+                                        <tr>
                                             <td><a href="{{ route('order.show', $order->id) }}">{{ $order->id }}</a></td>
                                             <td><a href="{{ route('user.show', $order->user_id) }}">{{ $order->user_id }}</td>
                                             <td>{{ $order->payment_status }}</a></td>

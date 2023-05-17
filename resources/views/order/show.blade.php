@@ -53,8 +53,8 @@
                                                         <td><a href="{{ route('user.show', $orders->user_id) }}">{{ $orders->user_id }}</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Продукты</td>{{dd(json_decode($orders->products))}}
-                                                        <td>@for($i = 0; $i < count(json_decode($orders->products)); $i++)<a href="{{ route('pizza.show', $orders->products[$i]['product']['id']) }}">{{ substr(print_r($orders->products[$i]['product']['title']), 0, -1) }}</a> : шт. {{ substr(print_r($orders->products[$i]['quantity']), 0, -1) }};<br> @endfor</a></td>
+                                                        <td>Продукты</td>
+                                                        <td>@for($i = 0; $i < count($orders->products); $i++)<a href="{{ route('pizza.show', $orders->products[$i]['product']['id']) }}">{{ substr(print_r($orders->products[$i]['product']['title']), 0, -1) }}</a> : шт. {{ substr(print_r($orders->products[$i]['quantity']), 0, -1) }};<br> @endfor</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Общая стоимость</td>
