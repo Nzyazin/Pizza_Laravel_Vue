@@ -36,14 +36,11 @@ class UpdateController extends Controller
                     "quantity" => intval($data["products"]["quantity"][$i])));                               
             }
         }
-
-        
         
         $data['products'] = json_encode($products);
-        //dd($data['products']);
-        $orders->update($data);
+        $data['total_price'] = $total_price;
+        $orders->update($data);        
         $orders['products'] = json_decode($data['products']);
-        //dd($orders['products']);
 
         return view('order.show', compact('orders'));
     }

@@ -58,7 +58,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Общая стоимость</td>
-                                                        <td>{{ $orders->total_price }}</td>
+                                                        <td>{{ $orders->total_price }} Р</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Статус оплаты</td>

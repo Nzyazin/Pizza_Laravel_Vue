@@ -11,8 +11,7 @@ class ShowController extends Controller
     {   
                
         $products = $orders->products;
-        $orders->products = json_decode($products);
-        
+        $orders->products = json_decode($products);        
         return view('order.show', compact('orders'));
     }
 }
