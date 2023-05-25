@@ -26,16 +26,16 @@
                     @csrf
                     @method('patch')
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Имя">
+                        <input type="text" name="name" class="form-control" placeholder="Имя" value="{{ $users->name }}">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="date_of_birth" class="form-control" placeholder="YYYY-MM-DD">
+                        <input type="text" name="date_of_birth" class="form-control" placeholder="YYYY-MM-DD" value="{{ $users->date_of_birth }}">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="mob_number" class="form-control" placeholder="Сотовый телефон">
+                        <input type="tel" name="mob_number" class="form-control" placeholder="Сотовый телефон" value="{{ $users->mob_number }}">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="address" class="form-control" placeholder="Адрес">
+                        <input type="text" name="address" class="form-control" placeholder="Адрес" value="{{ $users->address }}">
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Редактировать">

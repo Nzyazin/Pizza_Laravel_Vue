@@ -26,7 +26,7 @@ class StoreRequest extends FormRequest
         return [
             'name' => 'required|string',
             'date_of_birth' => 'required|date',
-            'mob_number' => 'required|integer',
+            'mob_number' => 'nullable',
             'address' => 'required|string',
         ];
     }

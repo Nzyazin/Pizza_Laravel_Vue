@@ -122,5 +122,6 @@
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
 <!-- Custom JS -->
 <script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('inputmask/dist/jquery.inputmask.bundle.js') }}"></script>
 </body>
 </html>

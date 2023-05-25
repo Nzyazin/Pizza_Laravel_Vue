@@ -47,7 +47,7 @@
                 </div>
                 <div style="display: block;" class="row w-25">
                     <input style="margin: 12px 12px; text-transform: capitalize;" type="name" v-model="name" class="js-name" id="input_id" data-role="name-mask" placeholder="Имя">
-                    <input style="margin: 12px 12px;" type="date" placeholder="Дата рождения" v-model="date_of_birth" id="date-mask" maxlength="8">
+                    <input style="margin: 12px 12px;" type="date" placeholder="Дата рождения" v-model="date_of_birth" id="date-mask" min="1899-12-31" max="2005-12-31">
                     <input style="margin: 12px 12px;" type="tel" v-model="mob_number" placeholder="Сотовый телефон">
                     <input style="margin: 12px 12px;" v-model="address" type="address" placeholder="Адрес">                
                     <button @click.prevent="storeOrder" class="btn--primary mt-30" style="margin: 12px 12px;" type="submit">Отправить </button>

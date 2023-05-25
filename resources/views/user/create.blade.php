@@ -25,13 +25,13 @@
                 <form action="{{ route('user.store') }}" method="post">
                     @csrf
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Имя">
+                        <input style="text-transform:capitalize;" type="text" name="name" class="form-control" placeholder="Имя">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="date_of_birth" class="form-control" placeholder="YYYY-MM-DD">
+                        <input name="date_of_birth" class="form-control" placeholder="Дата рождения" min="1899-12-31" max="2005-12-31">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="mob_number" class="form-control" placeholder="Сотовый телефон">
+                        <input type="tel" name="mob_number" class="form-control" placeholder="Сотовый телефон">
                     </div>
                     <div class="form-group">
                         <input type="text" name="address" class="form-control" placeholder="Адрес">
