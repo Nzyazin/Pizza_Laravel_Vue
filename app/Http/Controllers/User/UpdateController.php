@@ -21,7 +21,7 @@ class UpdateController extends Controller
                     $phone = mb_substr($phone, 0);
                 }
             }
-            return intval($phone);
+            return $phone;
         }
         //dd($data['mob_number']);
         $data['mob_number'] = filterPhone($data['mob_number']); 

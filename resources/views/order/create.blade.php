@@ -28,14 +28,21 @@
                         <input type="text" name="name" class="form-control" placeholder="Имя">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="date_of_birth" class="form-control" placeholder="Дата рождения">
+                        <input type="date" name="date_of_birth" class="form-control" placeholder="Дата рождения">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="mob_number" class="form-control" placeholder="Сотовый телефон">
+                        <input type="tel" name="mob_number" class="form-control" placeholder="Сотовый телефон">
                     </div>
                     <div class="form-group">
                         <input type="text" name="address" class="form-control" placeholder="Адрес">
-                    </div>                    
+                    </div>
+                    <div class="form-group">                        
+                        <select name="payment_status" class="custom-select" id="exampleSelectRounded0">
+                            <option disabled selected>Статус</option>
+                            <option value="1">Оплачено</option>
+                            <option value="0">Не оплачено</option>
+                        </select>
+                    </div>                  
                     <div class="form-group">
                         <table class="table table-hover text-nowrap">
                             <thead>
@@ -52,11 +59,11 @@
                             
                             @foreach($pizzas as $pizza)                                                                                        
                                 <tr>
-                                    <td name="">{{ $pizza->id }}</td>
-                                    <td name=""><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->title }}</a></td>
-                                    <td name="">{{ $pizza->description }}</td>
-                                    <td name=""><img style="max-width: 96px;" src="http://admin.pizza.local/storage/{{ $pizza->preview_image }}"></td>
-                                    <td name="">{{ $pizza->price }}</td>
+                                    <td>{{ $pizza->id }}</td>
+                                    <td><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->title }}</a></td>
+                                    <td>{{ $pizza->description }}</td>
+                                    <td><img style="max-width: 96px;" src="http://admin.pizza.local/storage/{{ $pizza->preview_image }}"></td>
+                                    <td>{{ $pizza->price }}</td>
                                     <td><input type="text" name="products[quantity][]" class="form-control" placeholder="Количество"></td>
                                 </tr>
                             @endforeach

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->index()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->json('products');
             $table->integer('total_price');
-            $table->unsignedSmallInteger('payment_status')->default(1);
+            $table->unsignedSmallInteger('payment_status');
             $table->timestamps();
         });
     }

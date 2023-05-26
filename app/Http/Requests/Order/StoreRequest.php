@@ -29,7 +29,8 @@ class StoreRequest extends FormRequest
             'date_of_birth' => 'nullable|date',
             'mob_number' => 'nullable|string',
             'address' => 'nullable|string',
-            'total_price' => 'nullable|integer'
+            'total_price' => 'nullable|integer',
+            'payment_status' => 'required|integer'
         ];
     }
 }

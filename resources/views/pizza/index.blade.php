@@ -35,6 +35,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Наименование</th>
+                                        <th>Картинка</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -42,6 +43,7 @@
                                         <tr>
                                             <td>{{ $pizza->id }}</td>
                                             <td><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->title }}</a></td>
+                                            <td><img style="max-width: 96px;" src="http://admin.pizza.local/storage/{{ $pizza->preview_image }}"></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

@@ -35,18 +35,18 @@
                         <input type="text" name="price" class="form-control" value="{{ $pizzas->price }}" placeholder="Цена">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="old_price" class="form-control" value="{{ $pizzas->old_price }}" placeholder="Старая цена">
+                        <input type="text" name="old_price" class="form-control" value="{{ $pizzas->old_price }}" id="exampleInputFile" placeholder="Старая цена">
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="custom-file">
-                                <input name="preview_image" type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                                <input name="preview_image" type="file" class="custom-file-input" >
+                                <label class="custom-file-label" for="exampleInputFile" value="{{ $pizzas->preview_image }}">Выберите файл</label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Добавить">
+                        <input type="submit" class="btn btn-primary" value="Редактировать">
                     </div>
                 </form>
             </div>

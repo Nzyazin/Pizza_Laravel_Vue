@@ -26,10 +26,9 @@ class UpdateRequest extends FormRequest
         return [
             'title'=> 'nullable|string',
             'description'=> 'nullable|string',
-            'preview_image'=> 'nullable',
             'price'=> 'nullable|integer',
+            'preview_image'=> 'nullable',            
             'old_price' => 'nullable|integer',
-            'is_published'=> 'nullable|date',
         ];
     }
 }

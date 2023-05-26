@@ -19,6 +19,18 @@ class StoreController extends Controller
         $total_price = 0;
         
         $data = $request->validated();
+        //dd($data);
+
+        function filterPhone($phone) {
+            $phone = str_replace(array('(', ')', '-', '+', ' ',),'',$phone);
+            if (strlen($phone)>=10) {
+                $first = mb_substr($phone, 0, 1);
+                if ($first == '7' || $first == '8') {
+                    $phone = mb_substr($phone, 0);
+                }
+            }
+            return $phone;
+        }
         
         //Цикл сборки заказа в объект из существующих продуктов
         for ($i = 0; $i < count($data["products"]["quantity"]); $i++) {            
@@ -37,6 +49,9 @@ class StoreController extends Controller
                     "quantity" => intval($data["products"]["quantity"][$i])));                               
             }
         }
+
+        $data['mob_number'] = filterPhone($data['mob_number']);
+        
         //Если номер есть, то заказ добавляется к существующему пользователю
         $user = User::firstOrCreate([
             'mob_number' => $data['mob_number']

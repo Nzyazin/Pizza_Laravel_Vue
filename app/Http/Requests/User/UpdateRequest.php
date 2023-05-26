@@ -26,7 +26,7 @@ class UpdateRequest extends FormRequest
         return [
             'name' => 'required|string',
             'date_of_birth' => 'required|date',
-            'mob_number' => 'nullable',
+            'mob_number' => 'required|string',
             'address' => 'required|string',
         ];
     }

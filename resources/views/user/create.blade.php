@@ -28,7 +28,7 @@
                         <input style="text-transform:capitalize;" type="text" name="name" class="form-control" placeholder="Имя">
                     </div>
                     <div class="form-group">
-                        <input name="date_of_birth" class="form-control" placeholder="Дата рождения" min="1899-12-31" max="2005-12-31">
+                        <input type="date" name="date_of_birth" class="form-control" placeholder="Дата рождения" min="1899-12-31" max="2005-12-31">
                     </div>
                     <div class="form-group">
                         <input type="tel" name="mob_number" class="form-control" placeholder="Сотовый телефон">
