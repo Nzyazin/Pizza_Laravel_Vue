@@ -87,42 +87,6 @@
   </div>
 </template>
 <script>
-/*
-export default {
-    name: 'App',
-    components: {
-    },
-    mounted() {
-        $(document).trigger('change')
-        this.getCartProducts()
-    },
-    data() {
-        return {
-            products: []
-        }
-    },
-    computed: {
-        cartTotalCost() {
-            let i = 0;
-            for (let index = 0; index < this.products.length; index++) {
-                i += this.products[index].price * this.products[index].qty;
-            }
-            return i;
-        },
-        cartTotalQty() {
-            let i = 0;
-            for (let index = 0; index < this.products.length; index++) {
-                i += this.products[index].qty;
-            }
-            return i;
-        }
-    },
-    methods: {
-
-    }
-}
-*/
-import PizzaList from "./views/counter/PizzaCounter.vue";
 export default {
     name: "App",
     components: {},

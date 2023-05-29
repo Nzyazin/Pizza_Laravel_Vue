@@ -155,7 +155,6 @@ jQuery(function ($) {
         $('.hero-slider__title').addClass("aos-animate");
         $('.hero-slider__content').addClass("aos-animate");
         $('.hero-slider__btn').addClass("aos-animate");
-
       });
     };
 
