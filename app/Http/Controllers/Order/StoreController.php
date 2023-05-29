@@ -66,6 +66,7 @@ class StoreController extends Controller
             'products' => json_encode($products),
             'user_id' => $user->id,
             'total_price' => $total_price,
+            'payment_status' => $data['payment_status'],
         ]);
         return redirect()->route('order.index');
     }

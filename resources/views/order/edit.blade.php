@@ -51,9 +51,13 @@
                             </tbody>
                         </table>
                     </div>              
-                    <div class="form-group">
-                        <input type="text" name="price" class="form-control" value="" placeholder="Статус оплаты">
-                    </div>                   
+                    <div class="form-group">                        
+                        <select name="payment_status" class="custom-select" id="exampleSelectRounded0">
+                            <option disabled selected>Статус</option>
+                            <option {{ old('payment_status') == 1 ? 'selected' : '' }} value="1">Оплачено</option>
+                            <option {{ old('payment_status') == 0 ? 'selected' : '' }} value="0">Не оплачено</option>
+                        </select>
+                    </div>                     
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Редактировать">
                     </div>

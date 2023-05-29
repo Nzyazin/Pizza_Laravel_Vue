@@ -49,8 +49,8 @@
                                                         <td>{{ $orders->id }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>ID пользователя</td>
-                                                        <td><a href="{{ route('user.show', $orders->user_id) }}">{{ $orders->user_id }}</a></td>
+                                                        <td>Заказчик</td>
+                                                        <td><a href="{{ route('user.show', $orders->user_id) }}">@foreach($users as $user) @if($orders->user_id == $user->id ) {{ $user->name; }} @endif @endforeach</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Продукты</td>
@@ -62,7 +62,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Статус оплаты</td>
-                                                        <td>{{ $orders->payment_status }}</td>
+                                                        <td>{{ $orders->statusTitle }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>

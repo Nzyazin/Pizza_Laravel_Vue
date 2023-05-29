@@ -23,7 +23,7 @@ class Order extends Model
     }
 
     public function getStatusTitleAttribute() {
-        return self::getSatusOfPayment()[$this->gender];
+        return self::getSatusOfPayment()[$this->payment_status];
     }
 
 }

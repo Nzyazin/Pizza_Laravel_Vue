@@ -68,10 +68,6 @@
                                                         <td>Старая цена</td>
                                                         <td>{{ $pizzas->old_price }}</td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>Добавлен</td>
-                                                        <td>{{ $pizzas->is_published }}</td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>

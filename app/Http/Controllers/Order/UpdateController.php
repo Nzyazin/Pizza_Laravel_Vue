@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Order\UpdateRequest;
 use App\Models\Order;
 use App\Models\Pizza;
+use App\Models\User;
 
 class UpdateController extends Controller
 {
@@ -13,8 +14,9 @@ class UpdateController extends Controller
     {
         
         $data = $request->validated();
-
+        //dd($data);
         $pizzas = Pizza::all();
+        $users = User::all();
 
         $products = [];
         $total_price = 0;        
@@ -42,6 +44,6 @@ class UpdateController extends Controller
         $orders->update($data);        
         $orders['products'] = json_decode($data['products']);
 
-        return view('order.show', compact('orders'));
+        return view('order.show', compact('orders', 'users'));
     }
 }

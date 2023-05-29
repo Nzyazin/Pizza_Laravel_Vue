@@ -34,7 +34,7 @@
                                     <thead>
                                     <tr>
                                         <th>ID заказа</th>
-                                        <th>ID пользователя</th>
+                                        <th>Заказчик</th>
                                         <th>Статус оплаты</th>
                                         <th>Продукты</th>
                                         <th>Общая стоимость</th>
@@ -45,8 +45,8 @@
                                     @foreach($orders as $order)                                                                    
                                         <tr>
                                             <td><a href="{{ route('order.show', $order->id) }}">{{ $order->id }}</a></td>
-                                            <td><a href="{{ route('user.show', $order->user_id) }}"></td>
-                                            <td>{{ $order->payment_status }}</a></td>
+                                            <td><a href="{{ route('user.show', $order->user_id) }}">@foreach($users as $user) @if($order->user_id == $user->id ) {{ $user->name; }} @endif @endforeach</td>
+                                            <td>{{ $order->statusTitle }}</a></td>
                                             <td>@for($i = 0; $i < count($order->products); $i++)<a href="{{ route('pizza.show', $order->products[$i]['product']['id']) }}">{{ substr(print_r($order->products[$i]['product']['title']), 0, -1) }}</a> : шт. {{ substr(print_r($order->products[$i]['quantity']), 0, -1) }};<br> @endfor</a></td>
                                             <td>{{ $order->total_price }} Р</a></td>
                                         </tr>

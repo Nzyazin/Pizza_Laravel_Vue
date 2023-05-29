@@ -25,22 +25,22 @@
                 <form action="{{ route('order.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Имя">
+                        <input type="text" value="{{ old("name") }}" name="name" class="form-control" placeholder="Имя">
                     </div>
                     <div class="form-group">
-                        <input type="date" name="date_of_birth" class="form-control" placeholder="Дата рождения">
+                        <input type="date" value="{{ old("date_of_birth") }}" name="date_of_birth" class="form-control" placeholder="Дата рождения">
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="mob_number" class="form-control" placeholder="Сотовый телефон">
+                        <input type="tel" value="{{ old("mob_number") }}" name="mob_number" class="form-control" placeholder="Сотовый телефон">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="address" class="form-control" placeholder="Адрес">
+                        <input type="text" value="{{ old("address") }}" name="address" class="form-control" placeholder="Адрес">
                     </div>
                     <div class="form-group">                        
                         <select name="payment_status" class="custom-select" id="exampleSelectRounded0">
                             <option disabled selected>Статус</option>
-                            <option value="1">Оплачено</option>
-                            <option value="0">Не оплачено</option>
+                            <option {{ old('payment_status') == 1 ? 'selected' : '' }} value="1">Оплачено</option>
+                            <option {{ old('payment_status') == 0 ? 'selected' : '' }} value="0">Не оплачено</option>
                         </select>
                     </div>                  
                     <div class="form-group">
