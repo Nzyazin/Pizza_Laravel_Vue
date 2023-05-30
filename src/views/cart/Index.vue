@@ -46,11 +46,10 @@
                     </div>
                 </div>
                 <div style="display: block;" class="row w-25">
-                    <input style="margin: 12px 12px; text-transform: capitalize;" type="name" v-bind:value="inputOne" v-on:input="inputChangeOne" class="js-name" id="input_id" data-role="name-mask" placeholder="Имя">
-                    <input style="margin: 12px 12px;" type="" v-mask="'##/##/####'" placeholder="Дата рождения" v-model="date_of_birth" id="date-mask" min="1899-12-31" max="2005-12-31">
-                    <input style="margin: 12px 12px;" type="tel" v-mask="'8(###)###-##-##'" v-model="mob_number" placeholder="Сотовый телефон">
-                    
-                    <input style="margin: 12px 12px;" v-model="address" type="address" placeholder="Адрес">                
+                    <input style="margin: 12px 12px; text-transform: capitalize;" type="name" v-model="name" placeholder="Имя">
+                    <input style="margin: 12px 12px;" type="date" placeholder="Дата рождения" v-model="date_of_birth" min="1899-12-31" max="2005-12-31">
+                    <input style="margin: 12px 12px;" type="tel" v-mask="'8##########'" v-model="mob_number" placeholder="Сотовый телефон">                    
+                    <input style="margin: 12px 12px;" type="address" v-model="address" placeholder="Адрес">                
                     <button @click.prevent="storeOrder" class="btn--primary mt-30" style="margin: 12px 12px;" type="submit">Отправить </button>
                 </div>
             </div>
@@ -86,30 +85,59 @@ export default {
 
     methods: {
         storeOrder() {
-            this.axios.post('http://admin.pizza.local/api/orders', {
-                'products' : this.$store.state.cart.cart,
-                'name'     : this.name,
-                'date_of_birth': this.date_of_birth,
-                'mob_number': this.mob_number,
-                'address' : this.address,
-                'total_price': this.cartPrice,
-            })
-                .then(res => {
-                    console.log(res)
-                })
-        },
-        forSubmit() {
-            console.log('formSubmit', this.inputOne)
-        },
-        inputChangeOne(event) {
-            console.log('event.target.value', event.target.value)
-            this.inputOne = event.target.value;
+            if(this.$store.state.cart.cart == 0) {
+                alert('Выберите товар')
+            } else {
+                if(!this.name || !this.date_of_birth || !this.mob_number || !this.address) {
+                    alert('Заполните данные покупателя')           
+            } else {
+                    this.axios.post('http://admin.pizza.local/api/orders', {
+                    'products' : this.$store.state.cart.cart,
+                    'name'     : this.name,
+                    'date_of_birth': this.date_of_birth,
+                    'mob_number': this.mob_number,
+                    'address' : this.address,
+                    'total_price': this.cartPrice,
+                })                 
+                    .then(res => {
+                        alert('Заказ оформлен', res)
+                        this.$store.state.cart.cart = [];
+                    })
+                    .catch(function (error) {
+                        if (error.response) {
+                        // Запрос был сделан, и сервер ответил кодом состояния, который
+                        // выходит за пределы 2xx
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
+                        } else if (error.request) {
+                        // Запрос был сделан, но ответ не получен
+                        // `error.request`- это экземпляр XMLHttpRequest в браузере и экземпляр
+                        // http.ClientRequest в node.js
+                        alert('Сервис временное не работает')
+                        console.log(error.request);
+                        } else {
+                        // Произошло что-то при настройке запроса, вызвавшее ошибку
+                        console.log('Error', error.message);
+                        }
+                        alert('Сервис временное не работает')
+                        console.log(error.config);
+                    })
+                this.products,
+                this.name = null,
+                this.date_of_birth = null,
+                this.mob_number = null,
+                this.address = null
+                }           
+            }
+            
         }
     },
 
     data() {
         return {
             products: [],
+            errors: [],
             name: '',
             date_of_birth: '',
             mob_number: '',
