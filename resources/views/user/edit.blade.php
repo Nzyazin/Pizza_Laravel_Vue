@@ -29,7 +29,7 @@
                         <input type="text" name="name" class="form-control" placeholder="Имя" value="{{ $users->name }}">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="date_of_birth" class="form-control" placeholder="YYYY-MM-DD" value="{{ $users->date_of_birth }}">
+                        <input type="date" name="date_of_birth" class="form-control" placeholder="YYYY-MM-DD" value="{{ $users->date_of_birth }}">
                     </div>
                     <div class="form-group">
                         <input type="tel" name="mob_number" class="form-control" placeholder="Сотовый телефон" value="{{ $users->mob_number }}">
