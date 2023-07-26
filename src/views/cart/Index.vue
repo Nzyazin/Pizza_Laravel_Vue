@@ -20,7 +20,6 @@
                                     </thead>
                                     <tbody>
                                         <IncrDecr v-for="product in carts" :key="product.id" :product="product"/>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -45,13 +44,13 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: block;" class="row w-25">
+                <form style="display: block;" class="row w-25">
                     <input style="margin: 12px 12px; text-transform: capitalize;" type="name" v-model="name" placeholder="Имя">
                     <input style="margin: 12px 12px;" type="date" placeholder="Дата рождения" v-model="date_of_birth" min="1899-12-31" max="2005-12-31">
                     <input style="margin: 12px 12px;" type="tel" v-mask="'8##########'" v-model="mob_number" placeholder="Сотовый телефон">                    
                     <input style="margin: 12px 12px;" type="address" v-model="address" placeholder="Адрес">                
                     <button @click.prevent="storeOrder" class="btn--primary mt-30" style="margin: 12px 12px;" type="submit">Отправить </button>
-                </div>
+                </form>
             </div>
         </section>
         <!--End cart area-->
