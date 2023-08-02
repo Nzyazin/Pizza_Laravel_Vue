@@ -11,7 +11,6 @@ import 'isotope-layout';
 import 'slick-carousel';
 import 'magnific-popup';
 import { gsap } from 'gsap';
-import 'inputmask';
 
 gsap.registerPlugin()
 
