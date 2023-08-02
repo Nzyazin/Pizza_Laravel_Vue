@@ -4,17 +4,8 @@ import router from './router'
 import axios from "axios";
 import store from './store';
 import VueTheMask from 'vue-the-mask';
-import $ from 'jquery';
-window.$ = window.jQuery = $;
-console.log(window.$, 'Window.$')
-import 'isotope-layout';
-import 'slick-carousel';
-import 'magnific-popup';
-import { gsap } from 'gsap';
-
-gsap.registerPlugin()
-
-
+   
+import './assets/js/main.js';
 
 const app = createApp(App)
 

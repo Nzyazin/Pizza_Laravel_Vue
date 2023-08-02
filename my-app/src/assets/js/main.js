@@ -1,5 +1,6 @@
 jQuery(function ($) {
   'use strict';
+  console.log("JQuery function");
   $(document).on('change', function() {
     /****======  Sticky Header ======*******/
     var scrollPosition = window.scrollY;
@@ -14,15 +15,6 @@ jQuery(function ($) {
         header.addClass("animated fadeInDown fixed");
       }
     });
-      /****======  newsLetter_popup ======*******/
-    let selector = $(".modal-btn");
-    selector.magnificPopup({
-      type: "inline",
-      closeBtnInside: true,
-      autoFocusLast: true,
-      focus: ".modal-title",
-    });
-    selector.click();
 
     /****======  Active class add Remove  ======*******/
     $(".menubar").on("click", function () {
@@ -709,38 +701,6 @@ jQuery(function ($) {
       });
     };
 
-
-    if ($(".insta-slider").length) {
-      $(".insta-slider").magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false,
-        gallery: {
-          enabled: true
-        },
-        zoom: {
-          enabled: true,
-          duration: 300,
-          easing: 'ease-in-out',
-          opener: function (openerElement) {
-            return openerElement.is('img') ? openerElement : openerElement.find('img');
-          }
-        }
-      });
-    };
-
-
-    if ($(".single-product-three .single-item").length) {
-      $(".single-product-three .single-item").magnificPopup({
-        delegate: 'a',
-        type: 'image'
-      });
-    };
-
-
     /****======   Blog Page  ======*******/
     if ($(".blog-thumb-slider").length) {
       $(".blog-thumb-slider").slick({
@@ -836,23 +796,7 @@ jQuery(function ($) {
     /****======  Wow  ======*******/
     new WOW().init();
 
-
-    /****====== Magnific popup_link  ======*******/
-    if ($(".popup_link").length) {
-      $(".popup_link").magnificPopup({
-        type: "inline",
-        midClick: true,
-        mainClass: "mfp-fade"
-      });
-    };
-
-    /****====== Magnific popup video ======*******/
-    if ($(".video-popup").length) {
-      $(".video-popup").magnificPopup({
-        type: 'iframe'
-      });
-    };
-
+   
 
     /****====== MIXitup ======*******/
     if ($(".products-grid").length) {
@@ -1004,6 +948,7 @@ jQuery(function ($) {
     });
 
     $(window).on("load", function () {
+      console.log("Animate")
 
       /****======  Preloader Js  ======*******/
       $(".loader").delay(500).animate({
