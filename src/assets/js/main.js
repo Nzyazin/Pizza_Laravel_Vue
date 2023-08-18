@@ -1,7 +1,9 @@
+
 jQuery(function ($) {
   'use strict';
-  $(document).on('change', function() {    
-
+  
+  $(document).on('change', function() {      
+    
     /****======  Active class add Remove  ======*******/
     $(".menubar").on("click", function () {
       $(".mobile-menu__sidebar-menu ").addClass("active");
@@ -93,16 +95,17 @@ jQuery(function ($) {
         scrollTop: 0
       }, 250);
       return false;
-    });
-
-    $(window).on("load", function () {
-
-      /****======  Preloader Js  ======*******/
-      $(".loader").delay(500).animate({
-        "opacity": "0"
-      }, 500, function () {
-        $(".loader").css("display", "none");
-      });
-    });
+    }); 
+   
   })
+  $(window).on("load", function () {
+      
+    /****======  Preloader Js  ======*******/
+    $(".loader").delay(500).animate({
+      "opacity": "0"
+    }, 500, function () {
+      $(".loader").css("display", "none");
+    });
+  });   
+  
 }(jQuery));

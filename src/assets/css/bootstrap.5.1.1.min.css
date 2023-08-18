@@ -15,8 +15,7 @@
     }
 
     @media (max-width: 992px) {
-        .row {
-            display: block;
+        .row {  
         }
     }
 

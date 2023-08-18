@@ -89,7 +89,8 @@
 <script>
 export default {
     name: "App",
-    components: {},
+    components: {
+    },
     mounted() {
         this.$store.dispatch('main/getProducts')
     },
