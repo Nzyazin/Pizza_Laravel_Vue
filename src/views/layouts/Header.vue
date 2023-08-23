@@ -62,7 +62,7 @@
                                                     <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
                                                 </ul>
                                             </nav>
-                                            <div class="right d-flex align-items-center justify-content-end" >
+                                            <div class="right d-flex align-items-center justify-content-end cart_counter" >
                                                 <ul class="main-menu__widge-box d-flex align-items-center ">
                                                     <li class="cartm"> <router-link :to="{name: 'cart'}" class="number cart-icon" > <i
                                                         class="flaticon-shopping-cart" ></i><span

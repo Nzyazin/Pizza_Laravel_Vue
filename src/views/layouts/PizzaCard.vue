@@ -9,8 +9,8 @@
                 <strong><del v-if="product.old_price">Р {{ product.old_price }}</del> Р {{product.price}} </strong>
                 <p class="card-text">{{product.description}}</p>
             </div>
-            <div class="px-4 pb-3">
-                <button class="btn btn-secondary" @click="addProductToCart">Добавить</button>
+            <div class="px-4 pb-3 ">
+                <button class="btn btn-secondary btn-400" @click="addProductToCart">Добавить</button>
             </div>
         </div>
     </div>

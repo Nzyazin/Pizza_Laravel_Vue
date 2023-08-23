@@ -10,7 +10,7 @@
         <div class="footer-default__main-footer position-relative">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-30 wow fadeInUp animated">
                         <div class="footer-default__single-box">
                             <div class="company-info">
                                 <div class="footer-title">
@@ -29,18 +29,18 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-30 wow fadeInUp animated">
                         <div class="footer-default__single-box">
                             <div class="footer-title">
                                 <h4> Информация </h4>
                             </div>
                             <ul class="footer-links">
-                                <li><a href="about-us.html">О нас</a></li>
-                                <li><a href="contact.html">Контакты </a></li>
+                                <li><a href="">О нас</a></li>
+                                <li><a href="">Контакты </a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-30 wow fadeInUp animated">
                         <div class="footer-default__single-box">
                             <div class="footer-title">
                                 <h4> Соц сети </h4>
@@ -53,13 +53,13 @@
                                     </div>
                                     <div class="footer__medio-boxx  medio-boxx  d-flex align-items-center">
                                         <ul>
-                                            <li><a href="https://www.facebook.com/" target="_blank" class="active"><i
+                                            <li><a href="" target="_blank" class="active"><i
                                                         class="flaticon-facebook-app-symbol"></i></a></li>
-                                            <li><a href="https://www.youtube.com/" target="_blank"><i
+                                            <li><a href="" target="_blank"><i
                                                         class="flaticon-youtube"></i></a></li>
-                                            <li><a href="https://twitter.com/"><i class="flaticon-twitter"
+                                            <li><a href=""><i class="flaticon-twitter"
                                                         target="_blank"></i></a></li>
-                                            <li><a href="https://www.instagram.com/"><i class="flaticon-instagram"
+                                            <li><a href=""><i class="flaticon-instagram"
                                                         target="_blank"></i></a></li>
                                         </ul>
                                     </div>

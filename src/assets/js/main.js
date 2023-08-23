@@ -84,7 +84,7 @@ jQuery(function ($) {
     /****======  Bottom to Top Scroll Js  ======*******/
     var ScrollTop = $(".scrollToTop");
     $(window).on("scroll", function () {
-      if ($(this).scrollTop() < 500) {
+      if ($(this).scrollTop() < 100) {
         ScrollTop.removeClass("active");
       } else {
         ScrollTop.addClass("active");
