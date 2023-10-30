@@ -10,4 +10,4 @@ Installing:
 
 3. в OpenServer для backend указываем папку \pizza_laravel_vue\public
 
-4. для frontend запускаем командой npm run dev из папки pizza_laravel_vue
+4. Developement для frontend запускаем командой npm run dev из папки pizza_laravel_vue
