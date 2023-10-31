@@ -16747,6 +16747,16 @@ home4-footer Start
   color: #ff033e;
 }
 
+/* ===== main container first screen ======= */
+
+.limegreen {
+  color: limegreen;
+}
+
+.aqua {
+  color: aqua;
+}
+
 /* ===== loader ======= */
 .loader {
   background: #ffffff;
