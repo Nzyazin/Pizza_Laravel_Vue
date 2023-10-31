@@ -8570,7 +8570,6 @@ footer-default start
   top: -25%;
   -webkit-animation: traataniX 3s ease-in infinite;
           animation: traataniX 3s ease-in infinite;
-  display: none;
 }
 
 .footer-default__shap_2 {
@@ -16746,6 +16745,16 @@ home4-footer Start
 .fashon7 .mega-menu .page-dropdown-menu .dropdown-list.megamenu .dropdown.megamenu-dropdown .content .price:hover,
 .fashon7 .main-menu__widge-box li a:hover {
   color: #ff033e;
+}
+
+/* ===== main container first screen ======= */
+
+.limegreen {
+  color: limegreen;
+}
+
+.aqua {
+  color: aqua;
 }
 
 /* ===== loader ======= */

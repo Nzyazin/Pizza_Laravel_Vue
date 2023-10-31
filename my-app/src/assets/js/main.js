@@ -72,15 +72,6 @@ jQuery(function ($) {
       $(this).addClass("active");
     });
 
-
-
-    /****======  banner-one__slider Slick  ======*******/
-
-      $(".slick").not('.slick-initialized').slick({
-        prevArrow: '<div class="slick-arrow arrow-back"> <i class="flaticon-left-arrow-2"></i> </div>',
-        nextArrow: '<div class="slick-arrow arrow-next"> <i class="flaticon-right-arrow-2"></i> </div>'
-      });
-
     /****======  Bottom to Top Scroll Js  ======*******/
     var ScrollTop = $(".scrollToTop");
     $(window).on("scroll", function () {
