@@ -2,23 +2,7 @@
 jQuery(function ($) {
   'use strict';
   
-  $(document).on('change', function() {      
-    
-    /****======  Active class add Remove  ======*******/
-    $(".menubar").on("click", function () {
-      $(".mobile-menu__sidebar-menu ").addClass("active");
-      $(".menu-closer").addClass("active");
-    });
-
-    $(".menu-closer").on("click", function () {
-      $(".mobile-menu__sidebar-menu ").removeClass("active");
-      $(".menu-closer").removeClass("active");
-    });
-
-    $(".menubar").on("click", function () {
-      $(".sidebar-content").addClass("active");
-      $(".sidebar-content-closer").addClass("active");
-    });
+  $(document).on('change', function() {
 
     /****======  Bottom to Top Scroll Js  ======*******/
     var ScrollTop = $(".scrollToTop");

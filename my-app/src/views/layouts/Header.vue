@@ -9,28 +9,16 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="menu-info d-flex justify-content-between align-items-center">
-                                        <div class="menubar"> <span></span> <span></span> <span></span> </div> <a
-                                        href="/" class="logo"> <img src="/src/assets/images/logo/logo.png"
-                                                                    alt="" width="90" height="90"> </a>
+                                        <MobileButton/>
+                                        <a href="/" class="logo"> <img src="/src/assets/images/logo/logo.png" alt="" width="90" height="90"> </a>
                                         <div class="cart-holder">
-                                            <router-link :to="{name: 'cart'}" class="cart cart-icon position-relative">
-
+                                            <router-link :to="{name: 'cart'}" class="cart cart-icon position-relative">                                                
                                                 <i class="flaticon-shopping-cart">{{cartItemCount}}</i>
                                             </router-link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="menu-closer"></div>
-                        <div class="mobile-menu__sidebar-menu">
-                            <div class="menu-closer two"> <span> Закрыть меню </span> <span class="cross"><i
-                                class="flaticon-cross"></i></span> </div>
-                            <ul class="page-dropdown-menu">
-                                <li class="dropdown-list"> <router-link :to="{name: 'main'}"> <span>Главная </span> </router-link></li>
-                                <li class="dropdown-list"> <router-link :to="{name: 'home'}"> <span>Заказать </span> </router-link></li>
-                                <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -62,7 +50,7 @@
                                                     <li class="dropdown-list"> <router-link :to="{name: 'cart'}"> <span>Корзина </span> </router-link></li>
                                                 </ul>
                                             </nav>
-                                            <div class="right d-flex align-items-center justify-content-end" >
+                                            <div class="right d-flex align-items-center justify-content-end cart_counter" >
                                                 <ul class="main-menu__widge-box d-flex align-items-center ">
                                                     <li class="cartm"> <router-link :to="{name: 'cart'}" class="number cart-icon" > <i
                                                         class="flaticon-shopping-cart" ></i><span
@@ -118,14 +106,14 @@
                 </div>
             </div>
         </div>
-        <div class="side-cart-closer"></div>
     </header>
 </template>
 
 <script>
+import MobileButton from '../mobile_menu/MobileButton.vue';
 import { mapGetters } from 'vuex';
 export default {
-    components: { },
+    components: { MobileButton },
     computed: {
         ...mapGetters({
             cartItemCount: 'cart/cartItemCount'

@@ -6,7 +6,7 @@
                 <h4 class="card-title">
                     <router-link :to="{name: 'product', params: {id: product.id}}">{{ product.title }}</router-link>
                 </h4>
-                <strong><del v-if="product.old_price">Р {{ product.old_price }}</del> Р {{product.price}} </strong>
+                <strong><del v-if="product.old_price">Р {{ product.old_price }}</del> Р {{product.price}} </strong>
                 <p class="card-text">{{product.description}}</p>
             </div>
             <div class="px-4 pb-3">

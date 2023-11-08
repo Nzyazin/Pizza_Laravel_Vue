@@ -578,8 +578,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   60% {
     opacity: 1;
-    -webkit-transform: translateX(-30px);
-    transform: translateX(-30px);
+    -webkit-transform: translateX(-36px);
+    transform: translateX(-36px);
   }
 
   80% {
@@ -603,9 +603,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   60% {
     opacity: 1;
-    -webkit-transform: translateX(-30px);
-    -ms-transform: translateX(-30px);
-    transform: translateX(-30px);
+    -webkit-transform: translateX(-36px);
+    -ms-transform: translateX(-36px);
+    transform: translateX(-36px);
   }
 
   80% {

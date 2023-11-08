@@ -1155,7 +1155,7 @@ Menu Css
 .mobile-menu .menu-closer.active {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
-  width: calc(100% - 300px);
+  width: calc(104% - 300px);
 }
 
 .mobile-menu__sidebar-menu {
@@ -2699,12 +2699,12 @@ Menu Css
   margin-right: 20px;
 }
 .header-style-3 .mobile-menu__sidebar-menu {
-  -webkit-transform: translateX(-320px);
-          transform: translateX(-320px);
+  -webkit-transform: translateX(-651px);
+          transform: translateX(-651px);
 }
 .header-style-3 .mobile-menu__sidebar-menu.active {
-  -webkit-transform: translateX(-13px);
-          transform: translateX(-13px);
+  -webkit-transform: translateX(-51px);
+          transform: translateX(-51px);
 }
 
 .top-info__top-content {
@@ -8381,7 +8381,7 @@ footer-default start
   }
 }
 .footer-links {
-  padding-top: 15px;
+  padding-top: 6px;
 }
 .footer-links li {
   padding-bottom: 6px;
@@ -8419,7 +8419,7 @@ footer-default start
 }
 
 .footer-newsletter {
-  padding-top: 15px;
+  padding-top: 6px;
 }
 
 .footer-default__subscrib-form {
