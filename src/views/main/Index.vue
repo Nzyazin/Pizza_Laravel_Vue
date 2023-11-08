@@ -1,5 +1,5 @@
 <template>
-    <Header/>
+    <SiteHeader/>
     <main class="overflow-hidden">
         <!-- Start Main Slider -->
         <section class="banner-style-3">
@@ -36,9 +36,10 @@
 
 <script>
     import Header from "../layouts/Header.vue";
+    import SiteHeader from "../components/SiteHeader.vue";
     export default {
         name: "Index",
-        components: {Header},
+        components: {Header, SiteHeader},
         mounted() {
             $(document).trigger('change')
         }

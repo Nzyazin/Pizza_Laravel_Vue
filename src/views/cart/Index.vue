@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header/>
+        <SiteHeader/>
         <!--Start cart area-->
         <section class="cart-area pt-120 pb-120">
             <div class="container">
@@ -62,12 +62,14 @@ import { mapGetters } from "vuex";
 import IncrDecr from "../cart/IncrDecr.vue"
 import Header from "../layouts/Header.vue";
 import {TheMask} from 'vue-the-mask';
+import SiteHeader from "../components/SiteHeader.vue";
 
 export default {
     name: "cart",
     components: {
         TheMask,
         Header,
+        SiteHeader,
         IncrDecr
     },
     computed: {

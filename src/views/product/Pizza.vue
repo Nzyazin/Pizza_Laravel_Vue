@@ -1,5 +1,5 @@
 <template>
-    <Header/>
+    <SiteHeader/>
     <div class="row mt-5" v-if="product">
         <div class="col-4">
             <img :src="product.preview_image" class="w-100" alt=""/>
@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import Header from "../layouts/Header.vue";
+import SiteHeader from "../components/SiteHeader.vue";
 export default {
     components: {
-        Header
+        SiteHeader
     },
     props: ["id"],
     mounted() {

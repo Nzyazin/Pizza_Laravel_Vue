@@ -1,17 +1,17 @@
 <template>
-        <Header/>
+        <SiteHeader/>
         <PizzaList/>
 </template>
 
 <script>
-import Header from "../layouts/Header.vue";
+import SiteHeader from "../components/SiteHeader.vue";
 import Pizzas from "../product/Pizza.vue";
 import PizzaList from "../product/PizzaList.vue";
 export default {
   name: "Home.vue",
   components: {
       Pizzas,
-      Header,
+      SiteHeader,
       PizzaList,
   },
     mounted() {

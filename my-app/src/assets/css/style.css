@@ -14424,7 +14424,7 @@ pagination start
   -o-object-fit: cover;
      object-fit: cover;
 }
-.banner4 .content-holder {
+.banner4 {
   z-index: 9999;
 }
 
@@ -14500,7 +14500,6 @@ pagination start
 
 .content-holder {
   padding: 20px;
-  z-index: 1;
 }
 
 .content-common {
@@ -15219,9 +15218,6 @@ Product grid 4 Start
      object-fit: cover;
 }
 
-.content-holder {
-  z-index: 9999;
-}
 
 .bg-img {
   min-width: 100%;
@@ -15245,7 +15241,6 @@ Product grid 4 Start
 
 .content-holder {
   padding: 20px;
-  z-index: 1;
 }
 
 .content-common.hbc5 h5 {
