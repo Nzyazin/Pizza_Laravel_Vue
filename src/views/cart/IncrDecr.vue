@@ -7,17 +7,17 @@
                 <h5> {{ product.product.title }} </h5>
             </a> </div>
         </td>
-        <td>Р {{ product.product.price }}</td>
-        <td class="qty">
-            <div class="qtySelector text-center">
-                <span @click="decreaseToCart" class="decreaseQty"><i class="flaticon-minus"></i> </span>
-                <div class="qtyValue" style="margin: 0 auto;">{{ product.quantity }}</div>
-                <span @click="increaseToCart" class="increaseQty"> <i class="flaticon-plus"></i> </span> </div>
-        </td>
-        <td class="sub-total">Р {{ product.product.price * product.quantity }}</td>
+        <td><div class="one_pizza">Р {{ product.product.price }}</div></td>
         <td>
-            <div @click="removeToProduct" class="remove"> <i class="flaticon-cross"></i> </div>
+            <div class="qty">
+                <div class="qtySelector text-center">
+                    <span @click="decreaseToCart" class="decreaseQty"><i class="flaticon-minus"></i> </span>
+                    <div class="qtyValue" style="margin: 0 auto;">{{ product.quantity }}</div>
+                    <span @click="increaseToCart" class="increaseQty"> <i class="flaticon-plus"></i> </span> 
+                </div>
+            </div>                
         </td>
+        <td><div class="sub-total"><div>Р {{ product.product.price * product.quantity }}</div><div @click="removeToProduct" class="remove"> <i class="flaticon-cross"></i> </div></div></td>        
     </tr>
 </template>
 

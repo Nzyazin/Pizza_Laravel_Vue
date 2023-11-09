@@ -10797,6 +10797,52 @@ pagination start
   overflow-x: auto;
 }
 
+.pizza_header {
+  display: flex;
+  justify-content: center;
+}
+
+.pizza_price {
+  display: flex;
+  justify-content: center;
+}
+
+.pizza_qty {
+  display: flex;
+  justify-content: center;
+}
+
+.pizza_total {
+  display: flex;
+  justify-content: center;
+}
+
+.sub-total {
+  display: flex;
+  justify-content: center;
+  min-width: 69px;
+}
+
+.right {
+  min-width: 69px;
+  margin-left: 18px;
+}
+
+.cart-holder {
+  min-width: 60px;
+}
+
+.one_pizza {
+  display: flex;
+  justify-content: center;
+}
+
+.qty {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .cart-table {
   min-width: 760px;
   width: 100%;
@@ -10819,7 +10865,7 @@ pagination start
   font-weight: 400;
   text-transform: capitalize;
   padding: 18px 30px 18px;
-  border: 0px solid #ededed;
+  border: 1px solid #ededed;
 }
 
 .cart-table tbody tr {
@@ -10828,7 +10874,7 @@ pagination start
 
 .cart-table tbody tr td {
   padding: 20px;
-  border: 0px solid #ededed;
+  border: 1px solid #ededed;
   font-size: 16px;
   color: #555555;
 }
@@ -10837,14 +10883,13 @@ pagination start
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.cart-table tbody tr .title {
-  padding-left: 20px;
-}
 .cart-table tbody tr .thumb {
   max-width: 100px;
 }
@@ -10908,9 +10953,51 @@ pagination start
   border-left: 1px solid #e4e4e4;
 }
 
+.client_form {
+  width: 25%;
+}
+
+@media (max-width: 576px) {
+  .qty .qtySelector {
+    width: 93px;
+    height: 39px;
+    padding: 0px 12px 0px;
+  }
+
+  .qty .qtySelector .decreaseQty {
+    width: 30px;
+  }
+
+  .qty .qtySelector .increaseQty {
+    width: 30px;
+  }
+
+  .client_form {
+    width: 66%;
+  }
+}
+
+@media (max-width: 400px) {
+  .cart-table thead tr th:nth-child(2) {
+    display: none;
+  }
+
+  .cart-table tbody tr td:nth-child(2) {
+    display: none;
+  }
+
+  .client_form {
+    width: 87%;
+  }
+}
+
 @media (max-width: 768px) {
   .cart-table tbody tr td {
     padding: 0;
+  }
+
+  .left {
+    padding-right: 18px;
   }
 
   .container {
@@ -10924,6 +11011,10 @@ pagination start
 @media (max-width: 992px) {
   .cart-table {
     min-width: unset;
+  }
+
+  .cart-check-out ul {
+    padding-left: unset;
   }
 }
 /***

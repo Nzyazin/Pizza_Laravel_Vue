@@ -11,11 +11,10 @@
                                 <table class="cart-table">
                                     <thead class="cart-header">
                                     <tr>
-                                        <th class="">Пицца</th>
-                                        <th class="price">Штука</th>
-                                        <th>Количество</th>
-                                        <th>Итого</th>
-                                        <th class="hide-me"></th>
+                                        <th><div class="pizza_header">Пицца</div></th>
+                                        <th><div class="pizza_price">Штука</div></th>
+                                        <th><div class="pizza_qty">Количество</div></th>
+                                        <th><div class="pizza_total">Итого</div></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -30,7 +29,7 @@
                 <div style="margin-top: 9px;" class="row mt--30">
                     <div class="col-xl-6 col-lg-5 wow fadeInUp animated">
                         <div class="cart-check-out mt-30">
-                            <h3>Итоговая сумма</h3>
+                            <h3>К оплате</h3>
                             <ul class="cart-check-out-list">
                                 <li>
                                     <div class="left">
@@ -44,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <form style="display: block;" class="row w-25">
+                <form style="display: block;" class="row client_form">
                     <input style="margin: 12px 12px; text-transform: capitalize;" type="name" v-model="name" placeholder="Имя">
                     <input style="margin: 12px 12px;" type="date" placeholder="Дата рождения" v-model="date_of_birth" min="1899-12-31" max="2005-12-31">
                     <input style="margin: 12px 12px;" type="tel" v-mask="'8##########'" v-model="mob_number" placeholder="Сотовый телефон">                    

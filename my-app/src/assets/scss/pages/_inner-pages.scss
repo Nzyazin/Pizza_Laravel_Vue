@@ -2110,7 +2110,7 @@ pagination start
     font-weight: 400;
     text-transform: capitalize;
     padding: 18px 30px 18px;
-    border: 0px solid #ededed;
+    border: 1px solid #ededed;
 }
 
 .cart-table tbody tr {
@@ -2127,6 +2127,7 @@ pagination start
 .cart-table tbody tr .thumb-box {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .cart-table tbody tr {
