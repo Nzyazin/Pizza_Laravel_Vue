@@ -145,7 +145,6 @@ img {
 
 ul,
 ol {
-  padding: 0;
   margin: 0;
   list-style: none;
 }
@@ -1191,7 +1190,7 @@ Menu Css
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px 20px 10px;
+  padding: 10px 20px 10px 50px;
 }
 .mobile-menu__sidebar-menu .menu-closer.two span {
   font-size: 16px;
@@ -5735,7 +5734,8 @@ products-grid start
         height: 360px;
     }
 
-    .row>* {
+    .client_form {
+      width: 42%;
     }
 }
 @media (min-width: 992px) {
@@ -7972,6 +7972,10 @@ newsLetter-one style-two
   .blog-two__single-content .btn-box {
     margin-top: 10px;
   }
+
+  .client_form {
+    width: 62%;
+}
 }
 /***
 =============================================
@@ -10718,6 +10722,7 @@ pagination start
   position: relative;
   display: block;
   margin-top: 17px;
+  padding-left: unset;
 }
 
 .cart-check-out-list li {
@@ -10987,7 +10992,7 @@ pagination start
   }
 
   .client_form {
-    width: 87%;
+    width: 86%;
   }
 }
 
@@ -11015,6 +11020,20 @@ pagination start
 
   .cart-check-out ul {
     padding-left: unset;
+  }
+
+  .client_form {
+    width: 39%;
+  }
+}
+
+@media (max-width: 576px) {  
+  .cart-table thead tr th {
+    padding: 18px 21px 18px;
+  }
+
+  .client_form {
+    width: 62%;
   }
 }
 /***
