@@ -1,16 +1,15 @@
 <template>
     <Header/>
-    <div class="row mt-5 dflex" v-if="product">
+    <div class="row mt-5" v-if="product">
         <div class="col-4">
             <img :src="product.preview_image" class="w-100" alt=""/>
         </div>
         <div class="col-8">
             <h1>{{ product.title }}</h1>
             <h3>{{ product.price }}</h3>
-
-            <button class="btn btn-primary" @click="addProductToCart">Добавить</button>
-
             <p class="mt-4">{{ product.description }}</p>
+            <button class="btn btn-primary marg-bot-21" @click="addProductToCart">Добавить</button>
+            
         </div>
     </div>
 </template>
@@ -40,11 +39,9 @@ export default {
     }
 }
 </script>
-<style scoped>
-    @media (max-width: 992px) {
-        .dflex {
-            display: flex!important;
-        }
-        
-    }
+
+<style>
+.marg-bot-21 {
+    margin-bottom: 21px;
+}
 </style>

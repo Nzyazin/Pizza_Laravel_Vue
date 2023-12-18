@@ -9,8 +9,8 @@
                 <strong><del v-if="product.old_price">Р {{ product.old_price }}</del> Р {{product.price}} </strong>
                 <p class="card-text">{{product.description}}</p>
             </div>
-            <div class="px-4 pb-3">
-                <button class="btn btn-secondary" @click="addProductToCart">Добавить</button>
+            <div class="pad-left pb-3 flex-container">
+                <button class="btn btn-secondary btn-400" @click="addProductToCart">Добавить</button>
             </div>
         </div>
     </div>
@@ -35,5 +35,28 @@ export default {
 </script>
 
 <style scoped>
+
+@media (min-width: 578px) {
+    .pad-left {
+        padding-left: 1rem;
+    }
+}
+
+
+
+@media (max-width: 578px) {
+    .flex-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-title {
+        font-size: calc(1rem + .3vw);
+    }
+    
+    .btn {
+        font-size: 0.7rem;
+    }
+}
 
 </style>
