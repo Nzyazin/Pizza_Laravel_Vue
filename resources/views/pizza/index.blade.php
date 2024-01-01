@@ -19,7 +19,7 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid">
+        <div class="container-fluid overflow-auto">
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="row">
@@ -45,7 +45,7 @@
                                             <td>{{ $pizza->id }}</td>
                                             <td><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->title }}</a></td>
                                             <td>{{ $pizza->description }}</td>
-                                            <td><img style="max-width: 96px;" src="http://admin.pizza.local/storage/{{ $pizza->preview_image }}"></td>
+                                            <td><img style="max-width: 96px;" src="http://zyazinng.beget.tech/storage/{{ $pizza->preview_image }}"></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

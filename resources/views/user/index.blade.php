@@ -19,7 +19,7 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid">
+        <div class="container-fluid overflow-auto">
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="row">
